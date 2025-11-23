@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "about": "À propos",
+    "experience": "Expérience",
+    "projects": "Projets",
+    "contact": "Contactez-moi"
+  },
+  "hero": {
+    "title": "Création d'expériences mobiles évolutives",
+    "subtitle": "Bonjour, je suis Pierre. Développeur Flutter spécialisé dans l'optimisation des performances et l'architecture propre.",
+    "cta_view": "Voir mon travail",
+    "cta_cv": "Télécharger CV"
+  },
+  "about": {
+    "title": "À propos de moi",
+    "summary": "Développeur Flutter hautement qualifié avec plus de 2 ans d'expérience dans la livraison d'applications mobiles performantes et évolutives, améliorant constamment les performances de 10 à 15 %.",
+    "education_title": "Éducation",
+    "cert_title": "Certifications"
+  },
+  "experience": {
+    "title": "Expérience Professionnelle",
+    "jobs": {
+      "akrotech": {
+        "role": "Développeur Logiciel Junior",
+        "company": "Akrotech",
+        "duration": "Sept 2022 - Déc 2024",
+        "items": {
+          "first": "Collaboration au sein d'une équipe Flutter de 2 personnes pour livrer des applications mobiles de haute qualité.",
+          "second": "Utilisation de Riverpod pour la gestion d'état, réduisant les bugs de 15 % et améliorant la performance de 100ms.",
+          "third": "Intégration de l'API AWS Rekognition pour la détection d'objets en temps réel.",
+          "fourth": "Automatisation du flux de qualité de code via GitHub Actions (Dart Analyzer).",
+          "fifth": "Accélération des cycles de publication de plusieurs semaines à 1-2 jours grâce aux pipelines CI/CD."
+        }
+      }
+    }
+  },
+  "sections": {
+    "experience": "Expérience Professionnelle",
+    "featured_projects": "Projets en Vedette",
+    "skills": "Compétences Techniques"
+  },
+  "footer": {
+    "work_together": "Travaillons Ensemble",
+    "based_in": "Basé à Lubumbashi, RDC. Disponible pour des postes à distance et hybrides.",
+    "built_with": "Construit avec Flutter"
+  },
+  "projects": {
+    "rosary": {
+      "title": "Application Rosary",
+      "description": "Une application de suivi de prière réactive avec un rendu de contenu dynamique basé sur le jour. Intégration de services publicitaires pour la monétisation."
+    },
+    "tahadhari": {
+      "title": "Application Tahadhari",
+      "description": "Une application d'alerte d'urgence dotée de capacités de réponse en temps réel, de services de localisation et de notifications push."
+    },
+    "clima": {
+      "title": "Clima",
+      "description": "Application mobile météo fournissant des informations météorologiques actuelles pour la position de l'utilisateur."
+    }
+  },
+  "buttons": {
+    "gallery": "Galerie",
+    "download_visit": "Télécharger / Visiter",
+    "view_gallery": "Voir la galerie",
+    "view_details": "Voir détails"
+  }
+}
