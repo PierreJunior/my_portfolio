@@ -221,7 +221,7 @@ class _HeroSection extends StatelessWidget {
           end: Alignment.bottomRight,
           colors: [
             Theme.of(context).colorScheme.surface,
-            Theme.of(context).colorScheme.primaryContainer.withOpacity(0.3),
+            Theme.of(context).colorScheme.primaryContainer.withValues(alpha: 0.3),
           ],
         ),
       ),
@@ -438,7 +438,7 @@ class LogoWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(12), // Rounded corners (Squircle)
         boxShadow: [
           BoxShadow(
-            color: Theme.of(context).colorScheme.primary.withOpacity(0.4),
+            color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.4),
             blurRadius: 8,
             offset: const Offset(2, 4),
           ),
