@@ -54,11 +54,6 @@ class _ProjectsCarouselState extends State<ProjectsCarousel> {
                 itemBuilder: (context, index) {
                   final project = projects[index];
 
-                  // Logic to highlight specific projects based on CV data
-                  // You can refine this logic based on exact titles
-                  bool isMonetized = project.title.contains("Rosary");
-                  bool isRealTime = project.title.contains("Tahadhari");
-
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 20.0),
                     child: Center(

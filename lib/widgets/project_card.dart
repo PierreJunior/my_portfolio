@@ -159,7 +159,7 @@ class _ProjectCardState extends State<ProjectCard> {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
         transform: _isHovered
-            ? (Matrix4.identity()..scale(1.02))
+            ? (Matrix4.diagonal3Values(1.02, 1.02, 1.02))
             : Matrix4.identity(),
         child: Card(
           elevation: _isHovered ? 8 : 2,
@@ -198,7 +198,7 @@ class _ProjectCardState extends State<ProjectCard> {
                         child: Container(
                           padding: const EdgeInsets.all(6),
                           decoration: BoxDecoration(
-                            color: Colors.black.withOpacity(0.6),
+                            color: Colors.black.withValues(alpha: 0.6),
                             shape: BoxShape.circle,
                           ),
                           child: const Icon(Icons.zoom_in,
