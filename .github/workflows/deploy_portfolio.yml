@@ -1,0 +1,47 @@
+name: Deploy Portfolio to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Triggers on push to main branch
+
+permissions:
+  contents: write # Grant permission to write to the repository (required for deployment)
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Setup Flutter environment
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          # You can specify a version if needed, e.g., flutter-version: '3.24.0'
+
+      # 3. Install Dependencies
+      - name: Install Dependencies
+        run: flutter pub get
+
+      # 4. Run Analysis (Optional - leveraging your QA skills)
+      # Since you mention using Dart Analyzer in your CV, we can block deployment if analysis fails.
+      - name: Run Dart Analyzer
+        run: flutter analyze
+
+      # 5. Build Web Release
+      # IMPORTANT: If your repo name is NOT "pierresangwa.github.io" but something like "portfolio",
+      # you must add --base-href "/portfolio/" to the command below.
+      - name: Build Web Application
+        run: flutter build web --release --base-href "/my_portfolio/"
+
+      # 6. Deploy to GitHub Pages
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/web
