@@ -1,0 +1,24 @@
+name: Flutter Test
+on:
+  pull_request:
+    branches: [ develop, main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2.10.0
+        with:
+          channel: 'stable'
+
+      - name: Analyze
+        run: flutter pub get && flutter analyze .
+
+      # - name: Run Flutter Test
+      #   run: flutter test -r expanded
