@@ -26,7 +26,7 @@
         "duration": "Sept 2022 - Déc 2024",
         "items": {
           "first": "Collaboration au sein d'une équipe Flutter de 2 personnes pour livrer des applications mobiles de haute qualité.",
-          "second": "Utilisation de Riverpod pour la gestion d'état, réduisant les bugs de 15 % et améliorant la performance de 100ms.",
+          "second": "Utilisation de Riverpod pour la gestion d'état, réduisant les bugs de 15 % et améliorant la performance.",
           "third": "Intégration de l'API AWS Rekognition pour la détection d'objets en temps réel.",
           "fourth": "Automatisation du flux de qualité de code via GitHub Actions (Dart Analyzer).",
           "fifth": "Accélération des cycles de publication de plusieurs semaines à 1-2 jours grâce aux pipelines CI/CD."
