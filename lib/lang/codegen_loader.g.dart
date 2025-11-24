@@ -23,7 +23,7 @@ class CodegenLoader extends AssetLoader{
   },
   "hero": {
     "title": "Building Scalable Mobile Experiences",
-    "subtitle": "Hi, I'm Pierre. A Flutter Developer specializing in performance optimization and clean architecture.",
+    "subtitle": "Hi, I'm Pierre. A results-driven Flutter Developer focused on building high-quality, scalable mobile applications with a strong emphasis on user-centric UI/UX.",
     "cta_view": "View My Work",
     "cta_cv": "Download CV"
   },
@@ -90,7 +90,7 @@ static const Map<String,dynamic> _fr = {
   },
   "hero": {
     "title": "Création d'expériences mobiles évolutives",
-    "subtitle": "Bonjour, je suis Pierre. Développeur Flutter spécialisé dans l'optimisation des performances et l'architecture propre.",
+    "subtitle": "Bonjour, je suis Pierre. Développeur Flutter axé sur les résultats, concentré sur la création d'applications mobiles évolutives et de haute qualité, avec un accent fort sur l'UI/UX centrée sur l'utilisateur.",
     "cta_view": "Voir mon travail",
     "cta_cv": "Télécharger CV"
   },
