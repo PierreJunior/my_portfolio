@@ -26,7 +26,7 @@
         "duration": "Sept 2022 - Dec 2024",
         "items": {
           "first": "Collaborated within a 2-person Flutter development team, partnering with designers to deliver high-quality mobile applications.",
-          "second": "Utilized Riverpod for efficient state management, reducing bugs by 15% and improving performance by 100ms.",
+          "second": "Utilized Riverpod for efficient state management, reducing bugs by 15% and improving performance.",
           "third": "Integrated AWS Rekognition API for real-time object detection during the profile picture staging process.",
           "fourth": "Automated a continuous code quality workflow via GitHub Actions (Dart Analyzer/Linting).",
           "fifth": "Collaborated with cross-functional teams to accelerate release cycles from weeks to 1-2 days."

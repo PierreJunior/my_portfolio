@@ -42,7 +42,7 @@ class CodegenLoader extends AssetLoader{
         "duration": "Sept 2022 - Dec 2024",
         "items": {
           "first": "Collaborated within a 2-person Flutter development team, partnering with designers to deliver high-quality mobile applications.",
-          "second": "Utilized Riverpod for efficient state management, reducing bugs by 15% and improving performance by 100ms.",
+          "second": "Utilized Riverpod for efficient state management, reducing bugs by 15% and improving performance.",
           "third": "Integrated AWS Rekognition API for real-time object detection during the profile picture staging process.",
           "fourth": "Automated a continuous code quality workflow via GitHub Actions (Dart Analyzer/Linting).",
           "fifth": "Collaborated with cross-functional teams to accelerate release cycles from weeks to 1-2 days."
@@ -109,7 +109,7 @@ static const Map<String,dynamic> _fr = {
         "duration": "Sept 2022 - Déc 2024",
         "items": {
           "first": "Collaboration au sein d'une équipe Flutter de 2 personnes pour livrer des applications mobiles de haute qualité.",
-          "second": "Utilisation de Riverpod pour la gestion d'état, réduisant les bugs de 15 % et améliorant la performance de 100ms.",
+          "second": "Utilisation de Riverpod pour la gestion d'état, réduisant les bugs de 15 % et améliorant la performance.",
           "third": "Intégration de l'API AWS Rekognition pour la détection d'objets en temps réel.",
           "fourth": "Automatisation du flux de qualité de code via GitHub Actions (Dart Analyzer).",
           "fifth": "Accélération des cycles de publication de plusieurs semaines à 1-2 jours grâce aux pipelines CI/CD."
