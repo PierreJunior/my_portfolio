@@ -56,9 +56,9 @@ class FooterSection extends StatelessWidget {
               ),
               _ContactButton(
                 icon: Icons.link, // Using link icon for LinkedIn
-                label: "LinkedIn Profile", //
+                label: LocaleKeys.footer_linkedinProfile.tr(), //
                 // Replace with your actual LinkedIn URL
-                onTap: () => _launchAction("https://www.linkedin.com/in/your-profile"),
+                onTap: () => _launchAction("https://www.linkedin.com/in/pierre-junior-kahozi-49aa48aa/"),
               ),
             ],
           ),

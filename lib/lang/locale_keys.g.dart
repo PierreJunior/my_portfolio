@@ -38,6 +38,7 @@ abstract class  LocaleKeys {
   static const footer_work_together = 'footer.work_together';
   static const footer_based_in = 'footer.based_in';
   static const footer_built_with = 'footer.built_with';
+  static const footer_linkedinProfile = 'footer.linkedinProfile';
   static const footer = 'footer';
   static const projects_rosary_title = 'projects.rosary.title';
   static const projects_rosary_description = 'projects.rosary.description';

@@ -42,7 +42,8 @@
   "footer": {
     "work_together": "Travaillons Ensemble",
     "based_in": "Basé à Lubumbashi, RDC. Disponible pour des postes à distance et hybrides.",
-    "built_with": "Construit avec Flutter"
+    "built_with": "Construit avec Flutter",
+    "linkedinProfile": "Profil LinkedIn"
   },
   "projects": {
     "rosary": {

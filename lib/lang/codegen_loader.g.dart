@@ -58,7 +58,8 @@ class CodegenLoader extends AssetLoader{
   "footer": {
     "work_together": "Let's Work Together",
     "based_in": "Based in Lubumbashi, DRC. Available for remote & hybrid roles.",
-    "built_with": "Built with Flutter"
+    "built_with": "Built with Flutter",
+    "linkedinProfile": "LinkedIn Profile"
   },
   "projects": {
     "rosary": {
@@ -125,7 +126,8 @@ static const Map<String,dynamic> _fr = {
   "footer": {
     "work_together": "Travaillons Ensemble",
     "based_in": "Basé à Lubumbashi, RDC. Disponible pour des postes à distance et hybrides.",
-    "built_with": "Construit avec Flutter"
+    "built_with": "Construit avec Flutter",
+    "linkedinProfile": "Profil LinkedIn"
   },
   "projects": {
     "rosary": {
