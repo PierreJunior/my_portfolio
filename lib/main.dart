@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/lang/locale_keys.g.dart';
+import 'package:my_portfolio/utils/download_utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 // IMPORTS: Ensure these files exist based on our previous steps
@@ -199,12 +200,10 @@ class _HeroSection extends StatelessWidget {
     // 1. Get current language code ('en' or 'fr')
     final String langCode = context.locale.languageCode;
 
-    // 2. Construct the path (ensure files are named cv_en.pdf and cv_fr.pdf)
-    final String assetPath = '/assets/assets/cv/Pierre_Junior_cv_$langCode.pdf';
-
+    final String fullAssetPath = DownloadUtils.cvDownloadPath(langCode);
     // 3. Open the PDF
     // On Web, this opens it in a new browser tab where they can save it.
-    final Uri uri = Uri.parse(assetPath);
+    final Uri uri = Uri.parse(fullAssetPath);
     if (!await launchUrl(uri)) {
       debugPrint('Could not launch $uri');
     }
