@@ -18,7 +18,7 @@ jobs:
           channel: 'stable'
 
       - name: Analyse
-        run: flutter pub get && flutter analyze.
+        run: flutter pub get && flutter analyze .
 
       - name: Run Flutter Test
         run: flutter test -r expanded
