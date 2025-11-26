@@ -5,43 +5,55 @@ on:
     branches:
       - main # Triggers on push to main branch
 
+# 1. NEW: Configure Permissions for Official Pages Actions
 permissions:
-  contents: write # Grant permission to write to the repository (required for deployment)
+  contents: read # Read permission is sufficient for checkout
+  pages: write   # Permission to deploy to GitHub Pages
+  id-token: write # Permission for OIDC tokens for secure deployment
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    
+    # 2. NEW: Define the Deployment Environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      # 1. Checkout the code
+      # 1. Checkout the code (No change)
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2. Setup Flutter environment
+      # 2. Setup Flutter environment (No change)
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-          # You can specify a version if needed, e.g., flutter-version: '3.24.0'
 
-      # 3. Install Dependencies
+      # 3. Install Dependencies (No change)
       - name: Install Dependencies
         run: flutter pub get
 
-      # 4. Run Analysis (Optional - leveraging your QA skills)
-      # Since you mention using Dart Analyzer in your CV, we can block deployment if analysis fails.
+      # 4. Run Analysis (No change)
       - name: Run Dart Analyzer
         run: flutter analyze
 
-      # 5. Build Web Release
-      # IMPORTANT: If your repo name is NOT "pierresangwa.github.io" but something like "portfolio",
-      # you must add --base-href "/portfolio/" to the command below.
+      # 5. Build Web Release (No change)
       - name: Build Web Application
         run: flutter build web --release --base-href "/my_portfolio/"
 
-      # 6. Deploy to GitHub Pages
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      # 6. NEW: Setup Pages (Required for the deployment steps)
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # 7. NEW: Upload the built 'build/web' directory as an artifact
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build/web
+          path: 'build/web' # The output folder from flutter build
+
+      # 8. NEW: Deploy the artifact to GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
