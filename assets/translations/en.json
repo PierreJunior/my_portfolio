@@ -42,7 +42,8 @@
   "footer": {
     "work_together": "Let's Work Together",
     "based_in": "Based in Lubumbashi, DRC. Available for remote & hybrid roles.",
-    "built_with": "Built with Flutter"
+    "built_with": "Built with Flutter",
+    "linkedinProfile": "LinkedIn Profile"
   },
   "projects": {
     "rosary": {
