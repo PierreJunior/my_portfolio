@@ -200,7 +200,7 @@ class _HeroSection extends StatelessWidget {
     final String langCode = context.locale.languageCode;
 
     // 2. Construct the path (ensure files are named cv_en.pdf and cv_fr.pdf)
-    final String assetPath = 'assets/cv/Pierre Junior_cv_$langCode.pdf';
+    final String assetPath = 'assets/cv/Pierre_Junior_cv_$langCode.pdf';
 
     // 3. Open the PDF
     // On Web, this opens it in a new browser tab where they can save it.
