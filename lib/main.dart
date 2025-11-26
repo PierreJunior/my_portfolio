@@ -199,12 +199,15 @@ class _HeroSection extends StatelessWidget {
     // 1. Get current language code ('en' or 'fr')
     final String langCode = context.locale.languageCode;
 
+    const String basePath = '/my_portfolio/';
+
     // 2. Construct the path (ensure files are named cv_en.pdf and cv_fr.pdf)
     final String assetPath = '/assets/assets/cv/Pierre_Junior_cv_$langCode.pdf';
 
+    final String fullAssetPath = '$basePath$assetPath';
     // 3. Open the PDF
     // On Web, this opens it in a new browser tab where they can save it.
-    final Uri uri = Uri.parse(assetPath);
+    final Uri uri = Uri.parse(fullAssetPath);
     if (!await launchUrl(uri)) {
       debugPrint('Could not launch $uri');
     }
