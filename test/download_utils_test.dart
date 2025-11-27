@@ -7,7 +7,7 @@ void main() {
     test('Path must be correct for English CV to avoid 404', () {
       // The EXACT path (including base path and double assets) that worked live.
       const String expectedPath =
-          '/my_portfolio/assets/assets/cv/Pierre_Junior_cv_en.pdf';
+          '/assets/assets/cv/Pierre_Junior_cv_en.pdf';
 
       final String actualPath = DownloadUtils.cvDownloadPath('en');
 
@@ -18,7 +18,7 @@ void main() {
 
     test('Path must be correct for French CV', () {
       const String expectedPath =
-          '/my_portfolio/assets/assets/cv/Pierre_Junior_cv_fr.pdf';
+          '/assets/assets/cv/Pierre_Junior_cv_fr.pdf';
 
       final String actualPath = DownloadUtils.cvDownloadPath('fr');
 
