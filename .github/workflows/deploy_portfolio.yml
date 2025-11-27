@@ -41,8 +41,7 @@ jobs:
 
       # 5. Build Web Release (No change)
       - name: Build Web Application
-        run: flutter build web --release --base-href "/my_portfolio/"
-
+        run: flutter build web --release --base-href "/"
       # 6. NEW: Setup Pages (Required for the deployment steps)
       - name: Setup Pages
         uses: actions/configure-pages@v5
