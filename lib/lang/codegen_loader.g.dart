@@ -29,7 +29,7 @@ class CodegenLoader extends AssetLoader{
   },
   "about": {
     "title": "About Me",
-    "summary": "Highly skilled Flutter Developer with 2+ years of experience in delivering high-performance, scalable mobile applications, consistently improving app performance by 10-15%.",
+    "summary": "Highly skilled Flutter Developer with 2+ years of experience in delivering high-performance, scalable mobile applications, consistently improving applications performance.",
     "education_title": "Education",
     "cert_title": "Certifications"
   },
@@ -42,10 +42,10 @@ class CodegenLoader extends AssetLoader{
         "duration": "Sept 2022 - Dec 2024",
         "items": {
           "first": "Collaborated within a 2-person Flutter development team, partnering with designers to deliver high-quality mobile applications.",
-          "second": "Utilized Riverpod for efficient state management, reducing bugs by 15% and improving performance.",
+          "second": "Utilized Riverpod for efficient state management, reducing bugs and improving performance.",
           "third": "Integrated AWS Rekognition API for real-time object detection during the profile picture staging process.",
           "fourth": "Automated a continuous code quality workflow via GitHub Actions (Dart Analyzer/Linting).",
-          "fifth": "Collaborated with cross-functional teams to accelerate release cycles from weeks to 1-2 days."
+          "fifth": "Collaborated with cross-functional teams to accelerate release cycles from hours to minutes."
         }
       }
     }
@@ -97,7 +97,7 @@ static const Map<String,dynamic> _fr = {
   },
   "about": {
     "title": "À propos de moi",
-    "summary": "Développeur Flutter hautement qualifié avec plus de 2 ans d'expérience dans la livraison d'applications mobiles performantes et évolutives, améliorant constamment les performances de 10 à 15 %.",
+    "summary": "Développeur Flutter hautement qualifié avec plus de 2 ans d'expérience dans la livraison d'applications mobiles performantes et évolutives, améliorant constamment les performances.",
     "education_title": "Éducation",
     "cert_title": "Certifications"
   },
@@ -110,10 +110,10 @@ static const Map<String,dynamic> _fr = {
         "duration": "Sept 2022 - Déc 2024",
         "items": {
           "first": "Collaboration au sein d'une équipe Flutter de 2 personnes pour livrer des applications mobiles de haute qualité.",
-          "second": "Utilisation de Riverpod pour la gestion d'état, réduisant les bugs de 15 % et améliorant la performance.",
+          "second": "Utilisation de Riverpod pour la gestion d'état, réduisant les bugs et améliorant la performance.",
           "third": "Intégration de l'API AWS Rekognition pour la détection d'objets en temps réel.",
           "fourth": "Automatisation du flux de qualité de code via GitHub Actions (Dart Analyzer).",
-          "fifth": "Accélération des cycles de publication de plusieurs semaines à 1-2 jours grâce aux pipelines CI/CD."
+          "fifth": "Accélération des cycles de publication de plusieurs heures à quelques minutes grâce aux pipelines CI/CD."
         }
       }
     }
