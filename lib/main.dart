@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/lang/locale_keys.g.dart';
 import 'package:my_portfolio/utils/download_utils.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 // IMPORTS: Ensure these files exist based on our previous steps
@@ -71,105 +72,91 @@ class PortfolioHome extends StatelessWidget {
     final projectsKey = GlobalKey();
     final contactKey = GlobalKey();
 
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white.withValues(alpha: 0.95),
-        surfaceTintColor: Colors.transparent,
-        elevation: 0,
-        // inside PortfolioHome -> Scaffold -> AppBar
-        title: Padding(
-          padding: const EdgeInsets.only(left: 8.0),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              // 1. The Custom Logo
-              const LogoWidget(),
-
-              const SizedBox(width: 12),
-
-              // 2. The Text Name
-              Text(
-                "Pierre Junior",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                  color: Theme.of(
-                    context,
-                  ).colorScheme.onSurface, // Darker, cleaner text
-                  letterSpacing: -0.5,
+    return ResponsiveSizer(
+      builder: (context, orientation, screenType) {
+        return Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.white.withValues(alpha: 0.95),
+            surfaceTintColor: Colors.transparent,
+            elevation: 0,
+            // inside PortfolioHome -> Scaffold -> AppBar
+            title: Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const LogoWidget(),
+                  SizedBox(width: 2.w),
+                  Text(
+                    "Pierre Junior",
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+            ),
+            actions: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: DropdownButton(
+                  value: context.supportedLocales.contains(context.locale)
+                      ? context.locale
+                      : const Locale('en'),
+                  items: const [
+                    DropdownMenuItem(value: Locale('en'), child: Text('EN')),
+                    DropdownMenuItem(value: Locale('fr'), child: Text('FR')),
+                  ],
+                  onChanged: (Locale? newLocale) {
+                    if (newLocale != null) {
+                      context.setLocale(newLocale);
+                    }
+                  },
+                ),
+              ),
+              _NavBarItem(
+                title: LocaleKeys.nav_about.tr(),
+                onTap: () => _scrollToSection(aboutKey),
+              ),
+              _NavBarItem(
+                title: LocaleKeys.nav_experience.tr(),
+                onTap: () => _scrollToSection(experienceKey),
+              ),
+              _NavBarItem(
+                title: LocaleKeys.nav_projects.tr(),
+                onTap: () => _scrollToSection(projectsKey),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 20, left: 10),
+                child: FilledButton(
+                  onPressed: () => _scrollToSection(contactKey),
+                  child: Text(LocaleKeys.nav_contact.tr()),
                 ),
               ),
             ],
           ),
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: DropdownButton(
-              value: context.supportedLocales.contains(context.locale)
-                  ? context.locale
-                  : const Locale('en'),
-              items: const [
-                DropdownMenuItem(value: Locale('en'), child: Text('EN')),
-                DropdownMenuItem(value: Locale('fr'), child: Text('FR')),
+          body: SingleChildScrollView(
+            child: Column(
+              children: [
+                _HeroSection(onCtaTap: () => _scrollToSection(projectsKey)),
+                SizedBox(key: aboutKey, child: const AboutSection()),
+                Divider(height: 1.h),
+                SizedBox(key: experienceKey, child: const _ExperienceSection()),
+                // 4. Skills Section (Built-in)
+                const _SkillsSection(),
+
+                const SizedBox(height: 60),
+
+                // 5. Projects Carousel (Imported)
+                SizedBox(key: projectsKey, child: const ProjectsCarousel()),
+
+                const SizedBox(height: 80),
+
+                // 6. Footer (Imported)
+                SizedBox(key: contactKey, child: const FooterSection()),
               ],
-              onChanged: (Locale? newLocale) {
-                if (newLocale != null) {
-                  context.setLocale(newLocale);
-                }
-              },
             ),
           ),
-          _NavBarItem(
-            title: LocaleKeys.nav_about.tr(),
-            onTap: () => _scrollToSection(aboutKey),
-          ),
-          _NavBarItem(
-            title: LocaleKeys.nav_experience.tr(),
-            onTap: () => _scrollToSection(experienceKey),
-          ),
-          _NavBarItem(
-            title: LocaleKeys.nav_projects.tr(),
-            onTap: () => _scrollToSection(projectsKey),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 20, left: 10),
-            child: FilledButton(
-              onPressed: () => _scrollToSection(contactKey),
-              child: Text(LocaleKeys.nav_contact.tr()),
-            ),
-          ),
-        ],
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            // 1. Hero Section
-            _HeroSection(onCtaTap: () => _scrollToSection(projectsKey)),
-
-            // 2. About Section (Imported)
-            SizedBox(key: aboutKey, child: const AboutSection()),
-
-            const Divider(height: 1),
-
-            // 3. Experience Section (Built-in)
-            SizedBox(key: experienceKey, child: const _ExperienceSection()),
-
-            // 4. Skills Section (Built-in)
-            const _SkillsSection(),
-
-            const SizedBox(height: 60),
-
-            // 5. Projects Carousel (Imported)
-            SizedBox(key: projectsKey, child: const ProjectsCarousel()),
-
-            const SizedBox(height: 80),
-
-            // 6. Footer (Imported)
-            SizedBox(key: contactKey, child: const FooterSection()),
-          ],
-        ),
-      ),
+        );
+      }
     );
   }
 }
