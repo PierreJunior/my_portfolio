@@ -57,7 +57,7 @@ final List<Project> projects = [
       title: LocaleKeys.projects_rosary_title, // JUST THE KEY
       description: LocaleKeys.projects_rosary_description, // JUST THE KEY
       techStack: "Flutter, Firebase, Google Admob",
-      link: "https://play.google.com/apps/test/RQIualavXRc/...",
+      link: null,
       screenshots: [
         "assets/rosaryLogo.jpg",
         "assets/rosary1.jpg",
