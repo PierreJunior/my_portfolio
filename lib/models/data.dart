@@ -1,3 +1,4 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:my_portfolio/lang/locale_keys.g.dart'; // Ensure this path matches your generated file
 
 class DeveloperProfile {
@@ -9,8 +10,9 @@ class DeveloperProfile {
 
 
   static final String summary = LocaleKeys.about_summary;
-  static const String cvUrlFr = "https://drive.google.com/file/d/154D8ntJWXlogtrKjmFvLIL24gv6JutDI/view?usp=drive_link";
-  static const String cvUrlEn = "https://drive.google.com/file/d/1M1HvPVF95vHlenm-MSeYFkZ_-N6lK5tb/view?usp=drive_link";
+  static final String cvUrlEn = dotenv.env['CV_URL_EN']!;
+  static final String cvUrlFr = dotenv.env['CV_URL_FR']!;
+
 
   static String getCvUrl(String languageCode) {
     if (languageCode == 'fr') {
