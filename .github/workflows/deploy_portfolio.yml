@@ -35,11 +35,6 @@ jobs:
       - name: Install Dependencies
         run: flutter pub get
 
-      - name: Create .env file
-        run: |
-          echo "CV_URL_EN=${{ secrets.CV_URL_EN }}" > .env
-          echo "CV_URL_FR=${{ secrets.CV_URL_FR }}" >> .env
-
       # 4. Run Analysis (No change)
       - name: Run Dart Analyzer
         run: flutter analyze
