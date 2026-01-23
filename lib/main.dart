@@ -78,13 +78,9 @@ class PortfolioHome extends StatelessWidget {
 
     return ResponsiveSizer(
       builder: (context, orientation, screenType) {
-        // Check if we are on a mobile screen (width < 600 is a safe bet)
         final isMobile = MediaQuery.of(context).size.width < 800;
 
         return Scaffold(
-          // 1. ADD THE DRAWER
-          // Only attach the drawer property if we are on mobile.
-          // This prevents the "swipe from left" gesture on desktop.
           drawer: isMobile
               ? _MobileDrawer(
             onAboutTap: () => _scrollToSection(aboutKey, context: context),
@@ -98,10 +94,7 @@ class PortfolioHome extends StatelessWidget {
             backgroundColor: Colors.white.withValues(alpha: 0.95),
             surfaceTintColor: Colors.transparent,
             elevation: 0,
-            centerTitle: false, // Keeps logo on the left
-
-            // 2. CONTROL THE HAMBURGER ICON
-            // If desktop, hide the default drawer icon. If mobile, let it show.
+            centerTitle: false,
             automaticallyImplyLeading: isMobile,
 
             title: Padding(
@@ -110,7 +103,6 @@ class PortfolioHome extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   const LogoWidget(),
-                  // Responsive Title: Hide text on very small screens to avoid overflow
                   if (MediaQuery.of(context).size.width > 380) ...[
                     SizedBox(width: 2.w),
                     Text(
@@ -124,8 +116,6 @@ class PortfolioHome extends StatelessWidget {
               ),
             ),
             actions: [
-              // 3. DESKTOP NAVIGATION
-              // If NOT mobile, show the standard Row of text buttons
               if (!isMobile) ...[
                 Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -133,7 +123,7 @@ class PortfolioHome extends StatelessWidget {
                     value: context.supportedLocales.contains(context.locale)
                         ? context.locale
                         : const Locale('en'),
-                    underline: const SizedBox(), // Removes the line
+                    underline: const SizedBox(),
                     items: const [
                       DropdownMenuItem(value: Locale('en'), child: Text('EN')),
                       DropdownMenuItem(value: Locale('fr'), child: Text('FR')),
@@ -165,7 +155,7 @@ class PortfolioHome extends StatelessWidget {
                   ),
                 ),
               ]
-              // If IS mobile, show nothing here (the Hamburger is on the left)
+              // If it's mobile, show nothing here (the Hamburger is on the left)
               else
                 const SizedBox.shrink(),
             ],
@@ -173,7 +163,6 @@ class PortfolioHome extends StatelessWidget {
           body: SingleChildScrollView(
             child: Column(
               children: [
-                // Wrapped the Hero Section CTA in a safe way for mobile
                 _HeroSection(onCtaTap: () => _scrollToSection(projectsKey)),
                 SizedBox(key: aboutKey, child: const AboutSection()),
                 Divider(height: 1.h),
@@ -191,8 +180,6 @@ class PortfolioHome extends StatelessWidget {
     );
   }
 }
-
-// --- NEW WIDGET: The Mobile Drawer ---
 
 class _MobileDrawer extends StatelessWidget {
   final VoidCallback onAboutTap;
@@ -251,10 +238,7 @@ class _MobileDrawer extends StatelessWidget {
             title: Text(LocaleKeys.nav_projects.tr()),
             onTap: onProjectsTap,
           ),
-
-          const Spacer(), // Pushes content to bottom
-
-          // Language Switcher in Drawer
+          const Spacer(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Row(
@@ -278,10 +262,7 @@ class _MobileDrawer extends StatelessWidget {
               ],
             ),
           ),
-
           const Divider(),
-
-          // Contact Button
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: SizedBox(
@@ -299,8 +280,6 @@ class _MobileDrawer extends StatelessWidget {
     );
   }
 }
-
-// --- LOCAL WIDGETS ---
 
 class _NavBarItem extends StatelessWidget {
   final String title;
@@ -334,7 +313,6 @@ class _HeroSection extends StatelessWidget {
     if (await canLaunchUrl(url)) {
       await launchUrl(url);
     } else {
-      // Use ScaffoldMessenger to show a small notification at the bottom
       if (context.mounted) {
         showDialog(
           context: context,
@@ -579,7 +557,6 @@ class LogoWidget extends StatelessWidget {
       width: 40,
       height: 40,
       decoration: BoxDecoration(
-        // Gradient background for a modern "tech" feel
         gradient: LinearGradient(
           colors: [
             Theme.of(context).colorScheme.primary,
@@ -588,7 +565,7 @@ class LogoWidget extends StatelessWidget {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
-        borderRadius: BorderRadius.circular(12), // Rounded corners (Squircle)
+        borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
             color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.4),
@@ -605,7 +582,6 @@ class LogoWidget extends StatelessWidget {
             fontWeight: FontWeight.w900,
             fontSize: 18,
             letterSpacing: -1.0,
-            // Tighter spacing for a logo look
             height: 1.0,
           ),
         ),
