@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:my_portfolio/lang/locale_keys.g.dart';
-import 'package:my_portfolio/utils/download_utils.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -14,6 +14,9 @@ import 'sections/footer_section.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+
+  await dotenv.load(fileName: "../.env");
+
   runApp(
     EasyLocalization(
       supportedLocales: const [Locale('en'), Locale('fr')],
@@ -56,7 +59,12 @@ class PortfolioHome extends StatelessWidget {
   const PortfolioHome({super.key});
 
   // Helper for scrolling to sections
-  void _scrollToSection(GlobalKey key) {
+  void _scrollToSection(GlobalKey key, {BuildContext? context}) {
+    // If we are in a drawer (context provided), close it first
+    if (context != null) {
+      Navigator.pop(context);
+    }
+
     Scrollable.ensureVisible(
       key.currentContext!,
       duration: const Duration(milliseconds: 600),
@@ -74,30 +82,174 @@ class PortfolioHome extends StatelessWidget {
 
     return ResponsiveSizer(
       builder: (context, orientation, screenType) {
+        final isMobile = MediaQuery.of(context).size.width < 800;
+
         return Scaffold(
+          drawer: isMobile
+              ? _MobileDrawer(
+            onAboutTap: () => _scrollToSection(aboutKey, context: context),
+            onExpTap: () => _scrollToSection(experienceKey, context: context),
+            onProjectsTap: () => _scrollToSection(projectsKey, context: context),
+            onContactTap: () => _scrollToSection(contactKey, context: context),
+          )
+              : null,
+
           appBar: AppBar(
             backgroundColor: Colors.white.withValues(alpha: 0.95),
             surfaceTintColor: Colors.transparent,
             elevation: 0,
-            // inside PortfolioHome -> Scaffold -> AppBar
+            centerTitle: false,
+            automaticallyImplyLeading: isMobile,
+
             title: Padding(
               padding: const EdgeInsets.only(left: 8.0),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   const LogoWidget(),
-                  SizedBox(width: 2.w),
-                  Text(
-                    "Pierre Junior",
-                    style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
-                  ),
+                  if (MediaQuery.of(context).size.width > 380) ...[
+                    SizedBox(width: 2.w),
+                    Text(
+                      "Pierre Junior",
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ],
               ),
             ),
             actions: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: DropdownButton(
+              if (!isMobile) ...[
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: DropdownButton(
+                    value: context.supportedLocales.contains(context.locale)
+                        ? context.locale
+                        : const Locale('en'),
+                    underline: const SizedBox(),
+                    items: const [
+                      DropdownMenuItem(value: Locale('en'), child: Text('EN')),
+                      DropdownMenuItem(value: Locale('fr'), child: Text('FR')),
+                    ],
+                    onChanged: (Locale? newLocale) {
+                      if (newLocale != null) {
+                        context.setLocale(newLocale);
+                      }
+                    },
+                  ),
+                ),
+                _NavBarItem(
+                  title: LocaleKeys.nav_about.tr(),
+                  onTap: () => _scrollToSection(aboutKey),
+                ),
+                _NavBarItem(
+                  title: LocaleKeys.nav_experience.tr(),
+                  onTap: () => _scrollToSection(experienceKey),
+                ),
+                _NavBarItem(
+                  title: LocaleKeys.nav_projects.tr(),
+                  onTap: () => _scrollToSection(projectsKey),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 20, left: 10),
+                  child: FilledButton(
+                    onPressed: () => _scrollToSection(contactKey),
+                    child: Text(LocaleKeys.nav_contact.tr()),
+                  ),
+                ),
+              ]
+              // If it's mobile, show nothing here (the Hamburger is on the left)
+              else
+                const SizedBox.shrink(),
+            ],
+          ),
+          body: SingleChildScrollView(
+            child: Column(
+              children: [
+                HeroSection(onCtaTap: () => _scrollToSection(projectsKey)),
+                SizedBox(key: aboutKey, child: const AboutSection()),
+                Divider(height: 1.h),
+                SizedBox(key: experienceKey, child: const _ExperienceSection()),
+                const _SkillsSection(),
+                const SizedBox(height: 60),
+                SizedBox(key: projectsKey, child: const ProjectsCarousel()),
+                const SizedBox(height: 80),
+                SizedBox(key: contactKey, child: const FooterSection()),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+}
+
+class _MobileDrawer extends StatelessWidget {
+  final VoidCallback onAboutTap;
+  final VoidCallback onExpTap;
+  final VoidCallback onProjectsTap;
+  final VoidCallback onContactTap;
+
+  const _MobileDrawer({
+    required this.onAboutTap,
+    required this.onExpTap,
+    required this.onProjectsTap,
+    required this.onContactTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      backgroundColor: Colors.white,
+      child: Column(
+        children: [
+          // Drawer Header
+          DrawerHeader(
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.primaryContainer.withValues(alpha: 0.3),
+            ),
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const LogoWidget(),
+                  const SizedBox(height: 10),
+                  Text(
+                    "Pierre Junior",
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+
+          // Navigation Links
+          ListTile(
+            leading: const Icon(Icons.person),
+            title: Text(LocaleKeys.nav_about.tr()),
+            onTap: onAboutTap,
+          ),
+          ListTile(
+            leading: const Icon(Icons.work),
+            title: Text(LocaleKeys.nav_experience.tr()),
+            onTap: onExpTap,
+          ),
+          ListTile(
+            leading: const Icon(Icons.code),
+            title: Text(LocaleKeys.nav_projects.tr()),
+            onTap: onProjectsTap,
+          ),
+          const Spacer(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text("Language:"),
+                DropdownButton(
                   value: context.supportedLocales.contains(context.locale)
                       ? context.locale
                       : const Locale('en'),
@@ -111,57 +263,27 @@ class PortfolioHome extends StatelessWidget {
                     }
                   },
                 ),
-              ),
-              _NavBarItem(
-                title: LocaleKeys.nav_about.tr(),
-                onTap: () => _scrollToSection(aboutKey),
-              ),
-              _NavBarItem(
-                title: LocaleKeys.nav_experience.tr(),
-                onTap: () => _scrollToSection(experienceKey),
-              ),
-              _NavBarItem(
-                title: LocaleKeys.nav_projects.tr(),
-                onTap: () => _scrollToSection(projectsKey),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 20, left: 10),
-                child: FilledButton(
-                  onPressed: () => _scrollToSection(contactKey),
-                  child: Text(LocaleKeys.nav_contact.tr()),
-                ),
-              ),
-            ],
-          ),
-          body: SingleChildScrollView(
-            child: Column(
-              children: [
-                _HeroSection(onCtaTap: () => _scrollToSection(projectsKey)),
-                SizedBox(key: aboutKey, child: const AboutSection()),
-                Divider(height: 1.h),
-                SizedBox(key: experienceKey, child: const _ExperienceSection()),
-                // 4. Skills Section (Built-in)
-                const _SkillsSection(),
-
-                const SizedBox(height: 60),
-
-                // 5. Projects Carousel (Imported)
-                SizedBox(key: projectsKey, child: const ProjectsCarousel()),
-
-                const SizedBox(height: 80),
-
-                // 6. Footer (Imported)
-                SizedBox(key: contactKey, child: const FooterSection()),
               ],
             ),
           ),
-        );
-      }
+          const Divider(),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: SizedBox(
+              width: double.infinity,
+              child: FilledButton.icon(
+                onPressed: onContactTap,
+                icon: const Icon(Icons.mail),
+                label: Text(LocaleKeys.nav_contact.tr()),
+              ),
+            ),
+          ),
+          const SizedBox(height: 20),
+        ],
+      ),
     );
   }
 }
-
-// --- LOCAL WIDGETS ---
 
 class _NavBarItem extends StatelessWidget {
   final String title;
@@ -178,21 +300,42 @@ class _NavBarItem extends StatelessWidget {
   }
 }
 
-class _HeroSection extends StatelessWidget {
+class HeroSection extends StatelessWidget {
   final VoidCallback onCtaTap;
 
-  const _HeroSection({required this.onCtaTap});
+  const HeroSection({super.key, required this.onCtaTap});
 
   Future<void> _downloadCV(BuildContext context) async {
-    // 1. Get current language code ('en' or 'fr')
-    final String langCode = context.locale.languageCode;
+    // 1. Get the current language code from easy_localization's context
+    final currentLanguageCode = context.locale.languageCode;
 
-    final String fullAssetPath = DownloadUtils.cvDownloadPath(langCode);
-    // 3. Open the PDF
-    // On Web, this opens it in a new browser tab where they can save it.
-    final Uri uri = Uri.parse(fullAssetPath);
-    if (!await launchUrl(uri)) {
-      debugPrint('Could not launch $uri');
+    // 2. Get the correct CV URL using the helper function from DeveloperProfile
+    final urlString = DeveloperProfile.getCvUrl(currentLanguageCode);
+    final url = Uri.parse(urlString);
+
+    // 3. Launch the URL if possible, otherwise show an error
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      if (context.mounted) {
+        showDialog(
+          context: context,
+          builder: (BuildContext dialogContext) {
+            return AlertDialog.adaptive(
+              title: Text(LocaleKeys.cv_download_error_title.tr()),
+              content: Text(LocaleKeys.cv_download_error_message.tr()),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(dialogContext).pop();
+                  },
+                  child: Text(LocaleKeys.cv_download_error_close.tr()),
+                ),
+              ],
+            );
+          },
+        );
+      }
     }
   }
 
@@ -207,7 +350,9 @@ class _HeroSection extends StatelessWidget {
           end: Alignment.bottomRight,
           colors: [
             Theme.of(context).colorScheme.surface,
-            Theme.of(context).colorScheme.primaryContainer.withValues(alpha: 0.3),
+            Theme.of(
+              context,
+            ).colorScheme.primaryContainer.withValues(alpha: 0.3),
           ],
         ),
       ),
@@ -233,8 +378,10 @@ class _HeroSection extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 40),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+          Wrap(
+            alignment: WrapAlignment.center,
+            spacing: 20, // Horizontal space
+            runSpacing: 20, // Vertical space when wrapped
             children: [
               FilledButton.icon(
                 onPressed: onCtaTap,
@@ -251,7 +398,9 @@ class _HeroSection extends StatelessWidget {
               OutlinedButton.icon(
                 onPressed: () => _downloadCV(context),
                 icon: const Icon(Icons.download),
-                label: Text("${LocaleKeys.hero_cta_cv.tr()} (${context.locale.languageCode.toUpperCase()})"),
+                label: Text(
+                  "${LocaleKeys.hero_cta_cv.tr()} (${context.locale.languageCode.toUpperCase()})",
+                ),
                 style: OutlinedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 32,
@@ -412,7 +561,6 @@ class LogoWidget extends StatelessWidget {
       width: 40,
       height: 40,
       decoration: BoxDecoration(
-        // Gradient background for a modern "tech" feel
         gradient: LinearGradient(
           colors: [
             Theme.of(context).colorScheme.primary,
@@ -421,7 +569,7 @@ class LogoWidget extends StatelessWidget {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
-        borderRadius: BorderRadius.circular(12), // Rounded corners (Squircle)
+        borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
             color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.4),
@@ -438,7 +586,6 @@ class LogoWidget extends StatelessWidget {
             fontWeight: FontWeight.w900,
             fontSize: 18,
             letterSpacing: -1.0,
-            // Tighter spacing for a logo look
             height: 1.0,
           ),
         ),

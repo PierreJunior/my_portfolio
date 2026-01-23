@@ -38,6 +38,7 @@ dependencies:
   easy_localization: ^3.0.7
   flutter_localization: ^0.3.3
   responsive_sizer: ^3.3.1
+  flutter_dotenv: ^6.0.0
 
 
 dev_dependencies:
@@ -66,7 +67,6 @@ flutter:
   assets:
      - assets/
      - assets/translations/
-     - assets/cv/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

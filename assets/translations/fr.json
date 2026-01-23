@@ -64,5 +64,9 @@
     "download_visit": "Télécharger / Visiter",
     "view_gallery": "Voir la galerie",
     "view_details": "Voir détails"
-  }
+  },
+  "cannot_open_cv": "Impossible d'ouvrir le CV. Veuillez réessayer plus tard.",
+  "cv_download_error_title": "Erreur de Téléchargement",
+  "cv_download_error_message": "Impossible d'ouvrir le CV. Le lien est peut-être corrompu ou temporairement indisponible.",
+  "cv_download_error_close": "Fermer"
 }
