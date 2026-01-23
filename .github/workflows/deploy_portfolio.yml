@@ -41,7 +41,10 @@ jobs:
 
       # 5. Build Web Release (No change)
       - name: Build Web Application
-        run: flutter build web --release --base-href "/"
+        run: 
+          flutter build web --release --base-href "/"
+          --dart-define=CV_URL_EN=${{ secrets.CV_URL_EN }}
+          --dart-define=CV_URL_FR=${{ secrets.CV_URL_FR }}
       # 6. NEW: Setup Pages (Required for the deployment steps)
       - name: Setup Pages
         uses: actions/configure-pages@v5
