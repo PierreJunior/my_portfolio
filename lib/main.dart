@@ -299,7 +299,7 @@ class _NavBarItem extends StatelessWidget {
 class HeroSection extends StatelessWidget {
   final VoidCallback onCtaTap;
 
-  const HeroSection({required this.onCtaTap});
+  const HeroSection({super.key, required this.onCtaTap});
 
   Future<void> _downloadCV(BuildContext context) async {
     // 1. Get the current language code from easy_localization's context
