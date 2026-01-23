@@ -35,6 +35,11 @@ jobs:
       - name: Install Dependencies
         run: flutter pub get
 
+      - name: Create .env file
+        run: |
+          echo "CV_URL_EN=${{ secrets.CV_URL_EN }}" > .env
+          echo "CV_URL_FR=${{ secrets.CV_URL_FR }}" >> .env
+
       # 4. Run Analysis (No change)
       - name: Run Dart Analyzer
         run: flutter analyze
@@ -42,7 +47,7 @@ jobs:
       # 5. Build Web Release (No change)
       - name: Build Web Application
         run: 
-          flutter build web --release --base-href "/" --dart-define=CV_URL_EN=${{ secrets.CV_URL_EN }} --dart-define=CV_URL_FR=${{ secrets.CV_URL_FR }}
+          flutter build web --release --base-href "/"
       # 6. NEW: Setup Pages (Required for the deployment steps)
       - name: Setup Pages
         uses: actions/configure-pages@v5
