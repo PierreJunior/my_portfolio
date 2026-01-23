@@ -55,5 +55,9 @@ abstract class  LocaleKeys {
   static const buttons_view_gallery = 'buttons.view_gallery';
   static const buttons_view_details = 'buttons.view_details';
   static const buttons = 'buttons';
+  static const cannot_open_cv = 'cannot_open_cv';
+  static const cv_download_error_title = 'cv_download_error_title';
+  static const cv_download_error_message = 'cv_download_error_message';
+  static const cv_download_error_close = 'cv_download_error_close';
 
 }

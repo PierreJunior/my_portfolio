@@ -7,8 +7,18 @@ class DeveloperProfile {
   static const String phone = "+243 842038115";
   static const String location = "Lubumbashi, DRC";
 
-  // JUST THE KEY
+
   static final String summary = LocaleKeys.about_summary;
+  static const String cvUrlFr = "https://drive.google.com/file/d/154D8ntJWXlogtrKjmFvLIL24gv6JutDI/view?usp=drive_link";
+  static const String cvUrlEn = "https://drive.google.com/file/d/1M1HvPVF95vHlenm-MSeYFkZ_-N6lK5tb/view?usp=drive_link";
+
+  static String getCvUrl(String languageCode) {
+    if (languageCode == 'fr') {
+      return cvUrlFr;
+    }
+    // Default to English for 'en' or any other language
+    return cvUrlEn;
+  }
 }
 
 class Experience {

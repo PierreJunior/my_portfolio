@@ -64,5 +64,9 @@
     "download_visit": "Download / Visit",
     "view_gallery": "View Gallery",
     "view_details": "View Details"
-  }
+  },
+  "cannot_open_cv": "Could not open CV. Please try again later.",
+  "cv_download_error_title": "Download Error",
+  "cv_download_error_message": "Could not open the CV. The link may be broken or temporarily unavailable.",
+  "cv_download_error_close": "Close"
 }

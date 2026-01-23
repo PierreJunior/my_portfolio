@@ -80,7 +80,11 @@ class CodegenLoader extends AssetLoader{
     "download_visit": "Download / Visit",
     "view_gallery": "View Gallery",
     "view_details": "View Details"
-  }
+  },
+  "cannot_open_cv": "Could not open CV. Please try again later.",
+  "cv_download_error_title": "Download Error",
+  "cv_download_error_message": "Could not open the CV. The link may be broken or temporarily unavailable.",
+  "cv_download_error_close": "Close"
 };
 static const Map<String,dynamic> _fr = {
   "nav": {
@@ -148,7 +152,11 @@ static const Map<String,dynamic> _fr = {
     "download_visit": "Télécharger / Visiter",
     "view_gallery": "Voir la galerie",
     "view_details": "Voir détails"
-  }
+  },
+  "cannot_open_cv": "Impossible d'ouvrir le CV. Veuillez réessayer plus tard.",
+  "cv_download_error_title": "Erreur de Téléchargement",
+  "cv_download_error_message": "Impossible d'ouvrir le CV. Le lien est peut-être corrompu ou temporairement indisponible.",
+  "cv_download_error_close": "Fermer"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": _en, "fr": _fr};
 }
