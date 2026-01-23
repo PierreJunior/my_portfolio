@@ -163,7 +163,7 @@ class PortfolioHome extends StatelessWidget {
           body: SingleChildScrollView(
             child: Column(
               children: [
-                _HeroSection(onCtaTap: () => _scrollToSection(projectsKey)),
+                HeroSection(onCtaTap: () => _scrollToSection(projectsKey)),
                 SizedBox(key: aboutKey, child: const AboutSection()),
                 Divider(height: 1.h),
                 SizedBox(key: experienceKey, child: const _ExperienceSection()),
@@ -296,10 +296,10 @@ class _NavBarItem extends StatelessWidget {
   }
 }
 
-class _HeroSection extends StatelessWidget {
+class HeroSection extends StatelessWidget {
   final VoidCallback onCtaTap;
 
-  const _HeroSection({required this.onCtaTap});
+  const HeroSection({required this.onCtaTap});
 
   Future<void> _downloadCV(BuildContext context) async {
     // 1. Get the current language code from easy_localization's context
