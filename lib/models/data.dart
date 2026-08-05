@@ -9,8 +9,8 @@ class DeveloperProfile {
 
 
   static final String summary = LocaleKeys.about_summary;
-  static const String cvUrlFr = "https://drive.google.com/file/d/154D8ntJWXlogtrKjmFvLIL24gv6JutDI/view?usp=drive_link";
-  static const String cvUrlEn = "https://drive.google.com/file/d/1M1HvPVF95vHlenm-MSeYFkZ_-N6lK5tb/view?usp=drive_link";
+  static const String cvUrlFr = "https://drive.google.com/file/d/1M1HvPVF95vHlenm-MSeYFkZ_-N6lK5tb/view?usp=sharing";
+  static const String cvUrlEn = "https://drive.google.com/file/d/154D8ntJWXlogtrKjmFvLIL24gv6JutDI/view?usp=sharing";
 
 
   static String getCvUrl(String languageCode) {
