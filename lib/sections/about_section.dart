@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/lang/locale_keys.g.dart';
 import 'package:my_portfolio/models/data.dart';
+import 'package:my_portfolio/services/content_overrides.dart';
 
 class AboutSection extends StatelessWidget {
   const AboutSection({super.key});
@@ -79,11 +80,14 @@ class AboutSection extends StatelessWidget {
         const SizedBox(height: 16),
 
         // Professional Summary
-        Text(
-          DeveloperProfile.summary.tr(),
-          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-            height: 1.6,
-            fontSize: 18,
+        ValueListenableBuilder<ContentOverrides>(
+          valueListenable: contentOverrides,
+          builder: (context, overrides, _) => Text(
+            overrides.aboutSummary ?? DeveloperProfile.summary.tr(),
+            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+              height: 1.6,
+              fontSize: 18,
+            ),
           ),
         ),
 
