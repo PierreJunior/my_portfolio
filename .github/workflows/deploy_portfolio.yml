@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main # Triggers on push to main branch
+  workflow_dispatch: # Allows manual re-run from the Actions tab
 
 # 1. NEW: Configure Permissions for Official Pages Actions
 permissions:
