@@ -22,30 +22,51 @@ class CodegenLoader extends AssetLoader{
     "contact": "Contact Me"
   },
   "hero": {
-    "title": "Building Scalable Mobile Experiences",
-    "subtitle": "Hi, I'm Pierre. A results-driven Flutter Developer focused on building high-quality, scalable mobile applications with a strong emphasis on user-centric UI/UX.",
+    "title": "Building Scalable Web & Mobile Experiences",
+    "subtitle": "Hi, I'm Pierre. A results-driven Full-Stack Software Developer building enterprise web applications (Blazor Server, C#) and scalable cross-platform mobile apps (Flutter), with a strong emphasis on Clean Architecture and user-centric UI/UX.",
     "cta_view": "View My Work",
     "cta_cv": "Download CV"
   },
   "about": {
     "title": "About Me",
-    "summary": "Highly skilled Flutter Developer with 2+ years of experience in delivering high-performance, scalable mobile applications, consistently improving applications performance.",
+    "summary": "Full-Stack Software Developer specializing in enterprise web applications (Blazor Server, C#, EF Core/Dapper) and cross-platform mobile development (Flutter, Dart, Riverpod). Applies Clean Architecture principles to build maintainable, scalable software, with a track record of high-performance data access layers, dynamic PDF/Excel reporting engines, and streamlined CI/CD pipelines.",
     "education_title": "Education",
     "cert_title": "Certifications"
   },
   "experience": {
     "title": "Work Experience",
     "jobs": {
+      "kcc": {
+        "role": "Full-Stack Developer Intern",
+        "company": "KCC",
+        "duration": "Feb 2026 - Present",
+        "items": {
+          "first": "Architected and developed APCMS, an enterprise security operations contract management system built on Blazor Server following layered Clean Architecture principles.",
+          "second": "Engineered a high-performance dual-ORM data access layer using EF Core for schema migrations and Dapper for latency-sensitive MSSQL queries.",
+          "third": "Implemented a decoupled handler/registry pattern to centralize resource-type rendering, audit logging, and UI status indicators.",
+          "fourth": "Delivered enterprise reporting capabilities by integrating QuestPDF for multi-page PDF generation and ClosedXML with row-streaming for reliable Excel import/export.",
+          "fifth": "Built dynamic MudBlazor multi-step contract creation forms with per-step validation alongside an interactive management dashboard using Chart.js via JavaScript Interop."
+        }
+      },
+      "independent": {
+        "role": "Independent Software Developer & Upskilling",
+        "company": "Self-Directed",
+        "duration": "Jan 2025 - Jan 2026",
+        "items": {
+          "first": "Conducted targeted technical research and upskilling in enterprise .NET design patterns, Blazor Server architecture, and advanced SQL query performance tuning.",
+          "second": "Engaged in independent technical project design and skill consolidation to drive proactive software engineering career growth."
+        }
+      },
       "akrotech": {
         "role": "Junior Software Developer",
         "company": "Akrotech",
         "duration": "Sept 2022 - Dec 2024",
         "items": {
-          "first": "Collaborated within a 2-person Flutter development team, partnering with designers to deliver high-quality mobile applications.",
-          "second": "Utilized Riverpod for efficient state management, reducing bugs and improving performance.",
-          "third": "Integrated AWS Rekognition API for real-time object detection during the profile picture staging process.",
-          "fourth": "Automated a continuous code quality workflow via GitHub Actions (Dart Analyzer/Linting).",
-          "fifth": "Collaborated with cross-functional teams to accelerate release cycles from hours to minutes."
+          "first": "Developed mobile applications in Flutter and Dart, collaborating with UI/UX designers to translate design mockups into responsive, accessible cross-platform interfaces.",
+          "second": "Engineered and deployed production mobile solutions, including the Tahadhari App (Emergency Alert System) and Rosary App (Prayer Tracker with Firebase sync and offline support).",
+          "third": "Integrated the AWS Rekognition API during user registration, enforcing a 90% minimum confidence threshold for automated face verification.",
+          "fourth": "Applied Riverpod for predictable state management and built resilient RESTful API integration layers with structured error and offline handling.",
+          "fifth": "Configured CI/CD deployment automation using GitHub Actions and Codemagic, reducing manual release pipeline execution time from 15 minutes to under 2 minutes."
         }
       }
     }
@@ -94,30 +115,51 @@ static const Map<String,dynamic> _fr = {
     "contact": "Contactez-moi"
   },
   "hero": {
-    "title": "Création d'expériences mobiles évolutives",
-    "subtitle": "Bonjour, je suis Pierre. Développeur Flutter axé sur les résultats, concentré sur la création d'applications mobiles évolutives et de haute qualité, avec un accent fort sur l'UI/UX centrée sur l'utilisateur.",
+    "title": "Création d'expériences web et mobiles évolutives",
+    "subtitle": "Bonjour, je suis Pierre. Développeur Full-Stack axé sur les résultats, spécialisé dans les applications web d'entreprise (Blazor Server, C#) et les applications mobiles multiplateformes évolutives (Flutter), avec un accent fort sur la Clean Architecture et l'UI/UX centrée sur l'utilisateur.",
     "cta_view": "Voir mon travail",
     "cta_cv": "Télécharger CV"
   },
   "about": {
     "title": "À propos de moi",
-    "summary": "Développeur Flutter hautement qualifié avec plus de 2 ans d'expérience dans la livraison d'applications mobiles performantes et évolutives, améliorant constamment les performances.",
+    "summary": "Développeur Full-Stack spécialisé dans les applications web d'entreprise (Blazor Server, C#, EF Core/Dapper) et le développement mobile multiplateforme (Flutter, Dart, Riverpod). Applique les principes de Clean Architecture pour créer des logiciels maintenables et évolutifs, avec un historique de couches d'accès aux données haute performance, de moteurs de reporting PDF/Excel dynamiques et de pipelines CI/CD optimisés.",
     "education_title": "Éducation",
     "cert_title": "Certifications"
   },
   "experience": {
     "title": "Expérience Professionnelle",
     "jobs": {
+      "kcc": {
+        "role": "Développeur Full-Stack Stagiaire",
+        "company": "KCC",
+        "duration": "Fév 2026 - Présent",
+        "items": {
+          "first": "Conception et développement d'APCMS, un système de gestion de contrats pour opérations de sécurité d'entreprise, construit sur Blazor Server selon les principes de la Clean Architecture en couches.",
+          "second": "Conception d'une couche d'accès aux données double-ORM haute performance, utilisant EF Core pour les migrations de schéma et Dapper pour les requêtes MSSQL sensibles à la latence.",
+          "third": "Mise en œuvre d'un pattern handler/registry découplé pour centraliser le rendu par type de ressource, la journalisation d'audit et les indicateurs de statut UI.",
+          "fourth": "Livraison de fonctionnalités de reporting d'entreprise en intégrant QuestPDF pour la génération de PDF multi-pages et ClosedXML avec streaming de lignes pour l'import/export Excel.",
+          "fifth": "Création de formulaires MudBlazor dynamiques en plusieurs étapes avec validation par étape, ainsi qu'un tableau de bord interactif utilisant Chart.js via JavaScript Interop."
+        }
+      },
+      "independent": {
+        "role": "Développeur Logiciel Indépendant & Perfectionnement",
+        "company": "Auto-Formation",
+        "duration": "Jan 2025 - Jan 2026",
+        "items": {
+          "first": "Recherche technique ciblée et perfectionnement sur les design patterns .NET d'entreprise, l'architecture Blazor Server et l'optimisation avancée des requêtes SQL.",
+          "second": "Conception de projets techniques indépendants et consolidation des compétences pour une progression de carrière proactive."
+        }
+      },
       "akrotech": {
         "role": "Développeur Logiciel Junior",
         "company": "Akrotech",
         "duration": "Sept 2022 - Déc 2024",
         "items": {
-          "first": "Collaboration au sein d'une équipe Flutter de 2 personnes pour livrer des applications mobiles de haute qualité.",
-          "second": "Utilisation de Riverpod pour la gestion d'état, réduisant les bugs et améliorant la performance.",
-          "third": "Intégration de l'API AWS Rekognition pour la détection d'objets en temps réel.",
-          "fourth": "Automatisation du flux de qualité de code via GitHub Actions (Dart Analyzer).",
-          "fifth": "Accélération des cycles de publication de plusieurs heures à quelques minutes grâce aux pipelines CI/CD."
+          "first": "Développement d'applications mobiles en Flutter et Dart, en collaboration avec des designers UI/UX pour traduire des maquettes en interfaces multiplateformes réactives et accessibles.",
+          "second": "Conception et déploiement de solutions mobiles en production, dont l'application Tahadhari (système d'alerte d'urgence) et l'application Rosary (suivi de prière avec synchronisation Firebase et support hors ligne).",
+          "third": "Intégration de l'API AWS Rekognition lors de l'inscription des utilisateurs, avec un seuil de confiance minimum de 90% pour la vérification faciale automatisée.",
+          "fourth": "Utilisation de Riverpod pour une gestion d'état prévisible et création de couches d'intégration API RESTful résilientes avec gestion structurée des erreurs et du mode hors ligne.",
+          "fifth": "Configuration de l'automatisation CI/CD via GitHub Actions et Codemagic, réduisant le temps d'exécution du pipeline de publication manuel de 15 minutes à moins de 2 minutes."
         }
       }
     }

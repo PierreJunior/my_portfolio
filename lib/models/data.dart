@@ -2,7 +2,7 @@ import 'package:my_portfolio/lang/locale_keys.g.dart'; // Ensure this path match
 
 class DeveloperProfile {
   static const String name = "Pierre Junior";
-  static const String title = "Flutter Developer";
+  static const String title = "Full-Stack Software Developer";
   static const String email = "pierresangwa@gmail.com";
   static const String phone = "+243 842038115";
   static const String location = "Lubumbashi, DRC";
@@ -32,6 +32,27 @@ class Experience {
 }
 
 final List<Experience> workHistory = [
+  Experience(
+      "KCC",
+      "Full-Stack Developer Intern",
+      "Feb 2026 - Present",
+      [
+        LocaleKeys.experience_jobs_kcc_items_first,
+        LocaleKeys.experience_jobs_kcc_items_second,
+        LocaleKeys.experience_jobs_kcc_items_third,
+        LocaleKeys.experience_jobs_kcc_items_fourth,
+        LocaleKeys.experience_jobs_kcc_items_fifth,
+      ]
+  ),
+  Experience(
+      "Self-Directed",
+      "Independent Software Developer & Upskilling",
+      "Jan 2025 - Jan 2026",
+      [
+        LocaleKeys.experience_jobs_independent_items_first,
+        LocaleKeys.experience_jobs_independent_items_second,
+      ]
+  ),
   Experience(
       "Akrotech",
       "Junior Software Developer",
@@ -106,10 +127,13 @@ final List<Project> projects = [
 ];
 
 final List<String> skills = [
-  "Dart & C#",
-  "Flutter & Firebase",
+  "C# & Blazor Server",
+  "Dart & Flutter",
+  "EF Core & Dapper",
+  "MSSQL & RESTful APIs",
   "Riverpod & Provider",
-  "CI/CD (GitHub Actions)",
-  "RESTful APIs & SQL",
-  "Unit & Integration Testing",
+  "Firebase (Firestore, Auth, FCM)",
+  "QuestPDF & ClosedXML",
+  "AWS Rekognition",
+  "CI/CD (GitHub Actions, Codemagic)",
 ];
