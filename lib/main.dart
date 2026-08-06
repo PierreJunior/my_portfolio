@@ -1,6 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/firebase_options.dart';
 import 'package:my_portfolio/lang/locale_keys.g.dart';
+import 'package:my_portfolio/services/content_overrides.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -13,6 +16,12 @@ import 'sections/footer_section.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+
+  try {
+    await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  } catch (_) {
+    // Site still works fully on bundled translations if Firebase can't init.
+  }
 
   runApp(
     EasyLocalization(
@@ -33,7 +42,7 @@ class MyPortfolio extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      title: 'Pierre Junior | Flutter Developer',
+      title: 'Pierre Junior | Full-Stack Software Developer',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // Using a professional blue widely used in enterprise tech
@@ -47,9 +56,38 @@ class MyPortfolio extends StatelessWidget {
           ),
         ),
       ),
-      home: const PortfolioHome(),
+      home: const _ContentSync(child: PortfolioHome()),
     );
   }
+}
+
+/// Kicks off (and re-kicks off on language switch) the Firestore content
+/// fetch for the active locale. Kept separate from [PortfolioHome] so the
+/// rest of the widget tree doesn't need to know Firestore exists.
+class _ContentSync extends StatefulWidget {
+  final Widget child;
+
+  const _ContentSync({required this.child});
+
+  @override
+  State<_ContentSync> createState() => _ContentSyncState();
+}
+
+class _ContentSyncState extends State<_ContentSync> {
+  String? _lastLocale;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final localeCode = context.locale.languageCode;
+    if (_lastLocale != localeCode) {
+      _lastLocale = localeCode;
+      loadContentOverrides(localeCode);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) => widget.child;
 }
 
 class PortfolioHome extends StatelessWidget {
@@ -353,10 +391,12 @@ class HeroSection extends StatelessWidget {
           ],
         ),
       ),
-      child: Column(
+      child: ValueListenableBuilder<ContentOverrides>(
+        valueListenable: contentOverrides,
+        builder: (context, overrides, _) => Column(
         children: [
           Text(
-            LocaleKeys.hero_title.tr(),
+            overrides.heroTitle ?? LocaleKeys.hero_title.tr(),
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.headlineSmall?.copyWith(
               color: Theme.of(context).colorScheme.primary,
@@ -367,7 +407,7 @@ class HeroSection extends StatelessWidget {
           ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 800),
             child: Text(
-              LocaleKeys.hero_subtitle.tr(),
+              overrides.heroSubtitle ?? LocaleKeys.hero_subtitle.tr(),
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.displayLarge?.copyWith(
                 fontSize: MediaQuery.of(context).size.width < 600 ? 32 : 56,
@@ -408,6 +448,7 @@ class HeroSection extends StatelessWidget {
             ],
           ),
         ],
+        ),
       ),
     );
   }
@@ -423,7 +464,36 @@ class _ExperienceSection extends StatelessWidget {
       width: double.infinity,
       child: ConstrainedBox(
         constraints: const BoxConstraints(maxWidth: 900),
-        child: Column(
+        child: ValueListenableBuilder<ContentOverrides>(
+          valueListenable: contentOverrides,
+          builder: (context, overrides, _) {
+            // Firestore overrides take raw achievement text; the bundled
+            // workHistory stores translation keys that still need `.tr()`.
+            final displayJobs = overrides.experience != null
+                ? overrides.experience!
+                    .map(
+                      (job) => (
+                        role: job.role,
+                        company: job.company,
+                        duration: job.duration,
+                        achievements: job.achievements,
+                      ),
+                    )
+                    .toList()
+                : workHistory
+                    .map(
+                      (job) => (
+                        role: job.role,
+                        company: job.company,
+                        duration: job.duration,
+                        achievements: job.achievements
+                            .map((key) => key.tr())
+                            .toList(),
+                      ),
+                    )
+                    .toList();
+
+            return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
@@ -431,8 +501,7 @@ class _ExperienceSection extends StatelessWidget {
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             const SizedBox(height: 40),
-            // Iterating over the workHistory list from data.dart
-            ...workHistory.map(
+            ...displayJobs.map(
               (job) => Padding(
                 padding: const EdgeInsets.only(bottom: 40.0),
                 child: Row(
@@ -487,7 +556,7 @@ class _ExperienceSection extends StatelessWidget {
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
-                                  Expanded(child: Text(point.tr())),
+                                  Expanded(child: Text(point)),
                                 ],
                               ),
                             ),
@@ -500,6 +569,8 @@ class _ExperienceSection extends StatelessWidget {
               ),
             ),
           ],
+        );
+          },
         ),
       ),
     );
@@ -515,7 +586,9 @@ class _SkillsSection extends StatelessWidget {
       width: double.infinity,
       color: Theme.of(context).colorScheme.surfaceContainer,
       padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 20),
-      child: Column(
+      child: ValueListenableBuilder<ContentOverrides>(
+        valueListenable: contentOverrides,
+        builder: (context, overrides, _) => Column(
         children: [
           Text(
             LocaleKeys.sections_skills.tr(),
@@ -526,7 +599,7 @@ class _SkillsSection extends StatelessWidget {
             spacing: 12,
             runSpacing: 12,
             alignment: WrapAlignment.center,
-            children: skills
+            children: (overrides.skills ?? skills)
                 .map(
                   (skill) => Chip(
                     avatar: const Icon(Icons.code, size: 16),
@@ -544,6 +617,7 @@ class _SkillsSection extends StatelessWidget {
                 .toList(),
           ),
         ],
+        ),
       ),
     );
   }

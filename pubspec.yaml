@@ -39,6 +39,8 @@ dependencies:
   flutter_localization: ^0.3.3
   responsive_sizer: ^3.3.1
   flutter_dotenv: ^6.0.0
+  firebase_core: ^4.13.0
+  cloud_firestore: ^6.8.0
 
 
 dev_dependencies:
