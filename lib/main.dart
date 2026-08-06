@@ -344,8 +344,10 @@ class HeroSection extends StatelessWidget {
     // 1. Get the current language code from easy_localization's context
     final currentLanguageCode = context.locale.languageCode;
 
-    // 2. Get the correct CV URL using the helper function from DeveloperProfile
-    final urlString = DeveloperProfile.getCvUrl(currentLanguageCode);
+    // 2. Prefer the live Firestore override, fall back to the bundled link
+    final urlString =
+        contentOverrides.value.cvUrl ??
+        DeveloperProfile.getCvUrl(currentLanguageCode);
     final url = Uri.parse(urlString);
 
     // 3. Launch the URL if possible, otherwise show an error

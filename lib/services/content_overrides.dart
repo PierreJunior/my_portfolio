@@ -39,6 +39,7 @@ class ContentOverrides {
   final String? aboutSummary;
   final List<String>? skills;
   final List<ExperienceOverride>? experience;
+  final String? cvUrl;
 
   const ContentOverrides({
     this.heroTitle,
@@ -46,6 +47,7 @@ class ContentOverrides {
     this.aboutSummary,
     this.skills,
     this.experience,
+    this.cvUrl,
   });
 
   static const empty = ContentOverrides();
@@ -90,6 +92,7 @@ Future<void> loadContentOverrides(String localeCode) async {
                   ),
                 )
                 .toList(),
+            cvUrl: data['cvUrl'] as String?,
           );
     _loadedForLocale = localeCode;
   } catch (_) {
