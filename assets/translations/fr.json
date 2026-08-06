@@ -6,30 +6,51 @@
     "contact": "Contactez-moi"
   },
   "hero": {
-    "title": "Création d'expériences mobiles évolutives",
-    "subtitle": "Bonjour, je suis Pierre. Développeur Flutter axé sur les résultats, concentré sur la création d'applications mobiles évolutives et de haute qualité, avec un accent fort sur l'UI/UX centrée sur l'utilisateur.",
+    "title": "Création d'expériences web et mobiles évolutives",
+    "subtitle": "Bonjour, je suis Pierre. Développeur Full-Stack axé sur les résultats, spécialisé dans les applications web d'entreprise (Blazor Server, C#) et les applications mobiles multiplateformes évolutives (Flutter), avec un accent fort sur la Clean Architecture et l'UI/UX centrée sur l'utilisateur.",
     "cta_view": "Voir mon travail",
     "cta_cv": "Télécharger CV"
   },
   "about": {
     "title": "À propos de moi",
-    "summary": "Développeur Flutter hautement qualifié avec plus de 2 ans d'expérience dans la livraison d'applications mobiles performantes et évolutives, améliorant constamment les performances.",
+    "summary": "Développeur Full-Stack spécialisé dans les applications web d'entreprise (Blazor Server, C#, EF Core/Dapper) et le développement mobile multiplateforme (Flutter, Dart, Riverpod). Applique les principes de Clean Architecture pour créer des logiciels maintenables et évolutifs, avec un historique de couches d'accès aux données haute performance, de moteurs de reporting PDF/Excel dynamiques et de pipelines CI/CD optimisés.",
     "education_title": "Éducation",
     "cert_title": "Certifications"
   },
   "experience": {
     "title": "Expérience Professionnelle",
     "jobs": {
+      "kcc": {
+        "role": "Développeur Full-Stack Stagiaire",
+        "company": "KCC",
+        "duration": "Fév 2026 - Présent",
+        "items": {
+          "first": "Conception et développement d'APCMS, un système de gestion de contrats pour opérations de sécurité d'entreprise, construit sur Blazor Server selon les principes de la Clean Architecture en couches.",
+          "second": "Conception d'une couche d'accès aux données double-ORM haute performance, utilisant EF Core pour les migrations de schéma et Dapper pour les requêtes MSSQL sensibles à la latence.",
+          "third": "Mise en œuvre d'un pattern handler/registry découplé pour centraliser le rendu par type de ressource, la journalisation d'audit et les indicateurs de statut UI.",
+          "fourth": "Livraison de fonctionnalités de reporting d'entreprise en intégrant QuestPDF pour la génération de PDF multi-pages et ClosedXML avec streaming de lignes pour l'import/export Excel.",
+          "fifth": "Création de formulaires MudBlazor dynamiques en plusieurs étapes avec validation par étape, ainsi qu'un tableau de bord interactif utilisant Chart.js via JavaScript Interop."
+        }
+      },
+      "independent": {
+        "role": "Développeur Logiciel Indépendant & Perfectionnement",
+        "company": "Auto-Formation",
+        "duration": "Jan 2025 - Jan 2026",
+        "items": {
+          "first": "Recherche technique ciblée et perfectionnement sur les design patterns .NET d'entreprise, l'architecture Blazor Server et l'optimisation avancée des requêtes SQL.",
+          "second": "Conception de projets techniques indépendants et consolidation des compétences pour une progression de carrière proactive."
+        }
+      },
       "akrotech": {
         "role": "Développeur Logiciel Junior",
         "company": "Akrotech",
         "duration": "Sept 2022 - Déc 2024",
         "items": {
-          "first": "Collaboration au sein d'une équipe Flutter de 2 personnes pour livrer des applications mobiles de haute qualité.",
-          "second": "Utilisation de Riverpod pour la gestion d'état, réduisant les bugs et améliorant la performance.",
-          "third": "Intégration de l'API AWS Rekognition pour la détection d'objets en temps réel.",
-          "fourth": "Automatisation du flux de qualité de code via GitHub Actions (Dart Analyzer).",
-          "fifth": "Accélération des cycles de publication de plusieurs heures à quelques minutes grâce aux pipelines CI/CD."
+          "first": "Développement d'applications mobiles en Flutter et Dart, en collaboration avec des designers UI/UX pour traduire des maquettes en interfaces multiplateformes réactives et accessibles.",
+          "second": "Conception et déploiement de solutions mobiles en production, dont l'application Tahadhari (système d'alerte d'urgence) et l'application Rosary (suivi de prière avec synchronisation Firebase et support hors ligne).",
+          "third": "Intégration de l'API AWS Rekognition lors de l'inscription des utilisateurs, avec un seuil de confiance minimum de 90% pour la vérification faciale automatisée.",
+          "fourth": "Utilisation de Riverpod pour une gestion d'état prévisible et création de couches d'intégration API RESTful résilientes avec gestion structurée des erreurs et du mode hors ligne.",
+          "fifth": "Configuration de l'automatisation CI/CD via GitHub Actions et Codemagic, réduisant le temps d'exécution du pipeline de publication manuel de 15 minutes à moins de 2 minutes."
         }
       }
     }
