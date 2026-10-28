@@ -74,17 +74,39 @@ class Project {
   final String techStack;
   final List<String> screenshots;
   final String? link;
+  final bool inDevelopment;
 
   Project({
     required this.title,
     required this.description,
     required this.techStack,
     required this.screenshots,
-    this.link
+    this.link,
+    this.inDevelopment = false,
   });
 }
 
 final List<Project> projects = [
+  Project(
+      title: LocaleKeys.projects_kahvent_title, // JUST THE KEY
+      description: LocaleKeys.projects_kahvent_description, // JUST THE KEY
+      techStack: "Flutter Web, Supabase, Riverpod, Cloudflare Pages",
+      link: "https://kahvent.pierrekahozi.com",
+      inDevelopment: true,
+      screenshots: [
+        "assets/Kahvent_Dashboard.png",
+        "assets/Kahvent_CreateEvent.png",
+        "assets/Kahvent_EventOverview.png",
+        "assets/Kahvent_PartiesOverview.png",
+        "assets/Kahvent_invitationDetail.png",
+        "assets/Kahvent_AddParty.png",
+        "assets/Kahvent_ImportParties.png",
+        "assets/Kahvent_EventTeam.png",
+        "assets/Kahvent_AddEventTeam.png",
+        "assets/Kahvent_EventTeamType.png",
+        "assets/Kahvent_HaveTeamCode.png",
+      ]
+  ),
   Project(
       title: LocaleKeys.projects_rosary_title, // JUST THE KEY
       description: LocaleKeys.projects_rosary_description, // JUST THE KEY

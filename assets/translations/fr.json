@@ -78,6 +78,10 @@
     "clima": {
       "title": "Clima",
       "description": "Application mobile météo fournissant des informations météorologiques actuelles pour la position de l'utilisateur."
+    },
+    "kahvent": {
+      "title": "Kahvent",
+      "description": "Invitations numériques pour événements qui remplacent les cartes papier : chaque groupe d'invités reçoit un lien qui est à la fois son invitation et son pass QR d'entrée, avec rôles d'équipe, gestion des places et import d'invités Excel/CSV."
     }
   },
   "buttons": {
@@ -85,6 +89,9 @@
     "download_visit": "Télécharger / Visiter",
     "view_gallery": "Voir la galerie",
     "view_details": "Voir détails"
+  },
+  "status": {
+    "in_development": "En développement"
   },
   "cannot_open_cv": "Impossible d'ouvrir le CV. Veuillez réessayer plus tard.",
   "cv_download_error_title": "Erreur de Téléchargement",

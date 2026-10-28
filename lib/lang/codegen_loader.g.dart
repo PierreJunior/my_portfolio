@@ -94,6 +94,10 @@ class CodegenLoader extends AssetLoader{
     "clima": {
       "title": "Clima",
       "description": "Weather mobile application to provide current weather information for the user's current location."
+    },
+    "kahvent": {
+      "title": "Kahvent",
+      "description": "Digital event invitations that replace paper cards: each guest Party gets a link that is both their invitation and their QR entry pass, with team roles, seat planning and Excel/CSV guest import."
     }
   },
   "buttons": {
@@ -101,6 +105,9 @@ class CodegenLoader extends AssetLoader{
     "download_visit": "Download / Visit",
     "view_gallery": "View Gallery",
     "view_details": "View Details"
+  },
+  "status": {
+    "in_development": "In development"
   },
   "cannot_open_cv": "Could not open CV. Please try again later.",
   "cv_download_error_title": "Download Error",
@@ -187,6 +194,10 @@ static const Map<String,dynamic> _fr = {
     "clima": {
       "title": "Clima",
       "description": "Application mobile météo fournissant des informations météorologiques actuelles pour la position de l'utilisateur."
+    },
+    "kahvent": {
+      "title": "Kahvent",
+      "description": "Invitations numériques pour événements qui remplacent les cartes papier : chaque groupe d'invités reçoit un lien qui est à la fois son invitation et son pass QR d'entrée, avec rôles d'équipe, gestion des places et import d'invités Excel/CSV."
     }
   },
   "buttons": {
@@ -194,6 +205,9 @@ static const Map<String,dynamic> _fr = {
     "download_visit": "Télécharger / Visiter",
     "view_gallery": "Voir la galerie",
     "view_details": "Voir détails"
+  },
+  "status": {
+    "in_development": "En développement"
   },
   "cannot_open_cv": "Impossible d'ouvrir le CV. Veuillez réessayer plus tard.",
   "cv_download_error_title": "Erreur de Téléchargement",
