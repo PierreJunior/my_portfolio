@@ -65,6 +65,7 @@ class _ProjectsCarouselState extends State<ProjectsCarousel> {
                         isRealTime: project.title.contains("Tahadhari"),
                         screenshots: project.screenshots,
                         projectUrl: project.link,
+                        inDevelopment: project.inDevelopment,
                       ),
                     ),
                   );

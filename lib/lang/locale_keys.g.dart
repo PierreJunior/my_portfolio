@@ -66,12 +66,17 @@ abstract class  LocaleKeys {
   static const projects_clima_title = 'projects.clima.title';
   static const projects_clima_description = 'projects.clima.description';
   static const projects_clima = 'projects.clima';
+  static const projects_kahvent_title = 'projects.kahvent.title';
+  static const projects_kahvent_description = 'projects.kahvent.description';
+  static const projects_kahvent = 'projects.kahvent';
   static const projects = 'projects';
   static const buttons_gallery = 'buttons.gallery';
   static const buttons_download_visit = 'buttons.download_visit';
   static const buttons_view_gallery = 'buttons.view_gallery';
   static const buttons_view_details = 'buttons.view_details';
   static const buttons = 'buttons';
+  static const status_in_development = 'status.in_development';
+  static const status = 'status';
   static const cannot_open_cv = 'cannot_open_cv';
   static const cv_download_error_title = 'cv_download_error_title';
   static const cv_download_error_message = 'cv_download_error_message';

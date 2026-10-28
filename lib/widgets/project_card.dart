@@ -11,6 +11,7 @@ class ProjectCard extends StatefulWidget {
   final String? projectUrl;
   final bool isMonetized;
   final bool isRealTime;
+  final bool inDevelopment;
 
   const ProjectCard({
     super.key,
@@ -21,6 +22,7 @@ class ProjectCard extends StatefulWidget {
     this.projectUrl,
     this.isMonetized = false,
     this.isRealTime = false,
+    this.inDevelopment = false,
   });
 
   @override
@@ -203,6 +205,36 @@ class _ProjectCardState extends State<ProjectCard> {
                           ),
                           child: const Icon(Icons.zoom_in,
                               color: Colors.white, size: 18),
+                        ),
+                      ),
+                    // Status pill so unfinished projects aren't read as shipped
+                    if (widget.inDevelopment)
+                      Positioned(
+                        left: 8,
+                        top: 8,
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 4),
+                          decoration: BoxDecoration(
+                            color: Colors.orange[700],
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              const Icon(Icons.construction,
+                                  color: Colors.white, size: 14),
+                              const SizedBox(width: 4),
+                              Text(
+                                LocaleKeys.status_in_development.tr(),
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                   ],
