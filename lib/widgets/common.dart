@@ -231,6 +231,9 @@ class SurfaceCard extends StatelessWidget {
 
 /// Lays children out in equal columns that wrap, like CSS
 /// `repeat(auto-fit, minmax(minWidth, 1fr))`. Rows size to their content.
+///
+/// Items in a row keep their own height. Stretching them with
+/// IntrinsicHeight under-measured text on web and clipped card content.
 class ResponsiveGrid extends StatelessWidget {
   final List<Widget> children;
   final double minItemWidth;
@@ -253,16 +256,14 @@ class ResponsiveGrid extends StatelessWidget {
       final rows = <Widget>[];
       for (var i = 0; i < children.length; i += columns) {
         final rowItems = children.sublist(i, (i + columns).clamp(0, children.length));
-        rows.add(IntrinsicHeight(
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              for (var j = 0; j < columns; j++) ...[
-                if (j > 0) SizedBox(width: spacing),
-                Expanded(child: j < rowItems.length ? rowItems[j] : const SizedBox.shrink()),
-              ],
+        rows.add(Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            for (var j = 0; j < columns; j++) ...[
+              if (j > 0) SizedBox(width: spacing),
+              Expanded(child: j < rowItems.length ? rowItems[j] : const SizedBox.shrink()),
             ],
-          ),
+          ],
         ));
       }
       return Column(
