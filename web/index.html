@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -18,21 +18,112 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="My Portfolio">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pierre Junior Kahozi | Full-Stack Software Developer (.NET &amp; Flutter)</title>
+  <meta name="description" content="Full-stack developer in Lubumbashi, DRC. Enterprise web apps in C# and Blazor Server, mobile apps in Flutter. Case studies: Kahvent, Tahadhari, Rosary. Open to remote and hybrid roles.">
+  <meta name="author" content="Pierre Junior Kahozi">
+  <meta name="theme-color" content="#0B3B3C">
+  <link rel="canonical" href="https://pierrejunior-portfolio.web.app/">
+
+  <!-- Link previews (LinkedIn, WhatsApp, Slack, X) -->
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Pierre Junior Kahozi">
+  <meta property="og:title" content="Pierre Junior Kahozi | Full-Stack Software Developer">
+  <meta property="og:description" content="Enterprise web apps in C# and Blazor Server, mobile apps in Flutter. Case studies and CV.">
+  <meta property="og:url" content="https://pierrejunior-portfolio.web.app/">
+  <meta property="og:image" content="https://pierrejunior-portfolio.web.app/og-image.jpg">
+  <meta property="og:image:alt" content="Portrait of Pierre Junior Kahozi">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta name="twitter:card" content="summary">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Pierre Junior Kahozi",
+    "jobTitle": "Full-Stack Software Developer",
+    "url": "https://pierrejunior-portfolio.web.app/",
+    "image": "https://pierrejunior-portfolio.web.app/og-image.jpg",
+    "email": "mailto:pierresangwa@gmail.com",
+    "address": {"@type": "PostalAddress", "addressLocality": "Lubumbashi", "addressCountry": "CD"},
+    "alumniOf": "University of Johannesburg",
+    "knowsAbout": ["C#", "Blazor Server", "EF Core", "Dapper", "MSSQL", "PostgreSQL", "Flutter", "Dart", "Riverpod", "Supabase", "Firebase"],
+    "sameAs": ["https://www.linkedin.com/in/pierre-junior-kahozi-49aa48aa/"]
+  }
+  </script>
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="my_portfolio">
+  <meta name="apple-mobile-web-app-title" content="Pierre Kahozi">
   <link rel="apple-touch-icon" href="icons/android-icon-192x192.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>my_portfolio</title>
   <link rel="manifest" href="manifest.json">
+
+  <style>
+    body { margin: 0; background: #0B3B3C; }
+    /* Plain-HTML version of the page. It is the loading screen while
+       Flutter starts, and it stays in the DOM (visually hidden) so search
+       engines and link previews always have real text to read. */
+    #static-site {
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: #FFFFFF;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+      line-height: 1.6;
+    }
+    #static-site a { color: #5EEAD4; }
+    #static-site h1 { font-size: clamp(32px, 6vw, 56px); line-height: 1.08; margin: 16px 0; }
+    #static-site h2 { font-size: 24px; margin: 40px 0 8px; }
+    #static-site p, #static-site li { color: #BFCDCB; max-width: 720px; }
+    #static-site .eyebrow { font-family: ui-monospace, monospace; font-size: 13px; color: #5EEAD4; }
+    #static-site .loader { margin-top: 32px; height: 3px; width: 160px; background: #1F6263; overflow: hidden; border-radius: 2px; }
+    #static-site .loader::after { content: ""; display: block; height: 100%; width: 40%; background: #14B8A6; animation: slide 1.1s ease-in-out infinite; }
+    @keyframes slide { from { transform: translateX(-100%); } to { transform: translateX(250%); } }
+    @media (prefers-reduced-motion: reduce) { #static-site .loader::after { animation: none; } }
+    .flutter-ready #static-site {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+    }
+  </style>
 </head>
 <body>
+  <main id="static-site">
+    <p class="eyebrow">FULL-STACK DEVELOPER · LUBUMBASHI, DRC · REMOTE / HYBRID</p>
+    <h1>Pierre Junior Kahozi: I build enterprise web apps and the mobile apps people carry.</h1>
+    <p>C# and Blazor Server for the back office. Flutter for the phone. Clean Architecture, fast data access and release pipelines that take minutes, not hours.</p>
+    <div class="loader" role="progressbar" aria-label="Loading"></div>
+
+    <h2>Case studies</h2>
+    <ul>
+      <li><a href="/work/kahvent">Kahvent</a>: wedding invitations where each guest's link is also their QR entry pass. Flutter, Supabase, PostgreSQL. <a href="https://kahvent.pierrekahozi.com">Live app</a>.</li>
+      <li><a href="/work/tahadhari">Tahadhari</a>: real-time emergency alerts with live GPS, push notifications and AWS Rekognition face checks. Delivered for Akrotech.</li>
+      <li><a href="/work/rosary">Rosary</a>: an offline-first prayer tracker with Firestore sync. Delivered for Akrotech.</li>
+      <li><a href="/work/clima">Clima</a>: a weather app from my Flutter learning path.</li>
+    </ul>
+
+    <h2>Experience</h2>
+    <ul>
+      <li>Software Developer Intern, Kamoto Copper Company (Feb 2026 – Oct 2026): Blazor Server, Clean Architecture, EF Core and Dapper on MSSQL, QuestPDF and ClosedXML reporting.</li>
+      <li>Upskilling (Jan 2025 – Jan 2026).</li>
+      <li>Junior Software Developer, Akrotech (Sept 2022 – Dec 2024): Flutter apps to production, CI/CD from 15 minutes to under 2.</li>
+    </ul>
+
+    <h2>Contact</h2>
+    <p><a href="mailto:pierresangwa@gmail.com">pierresangwa@gmail.com</a> · <a href="https://www.linkedin.com/in/pierre-junior-kahozi-49aa48aa/">LinkedIn</a></p>
+  </main>
+
+  <script>
+    // Flutter fires this once its first frame is on screen.
+    window.addEventListener('flutter-first-frame', function () {
+      document.body.classList.add('flutter-ready');
+    });
+  </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>

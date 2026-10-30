@@ -1,99 +1,266 @@
 {
   "nav": {
-    "about": "About",
+    "work": "Work",
     "experience": "Experience",
-    "projects": "Projects",
-    "contact": "Contact Me"
+    "stack": "Stack",
+    "contact": "Contact",
+    "language": "Language",
+    "menu": "Open menu",
+    "home": "Home"
   },
   "hero": {
-    "title": "Building Scalable Web & Mobile Experiences",
-    "subtitle": "Hi, I'm Pierre. A results-driven Full-Stack Software Developer building enterprise web applications (Blazor Server, C#) and scalable cross-platform mobile apps (Flutter), with a strong emphasis on Clean Architecture and user-centric UI/UX.",
-    "cta_view": "View My Work",
-    "cta_cv": "Download CV"
+    "eyebrow": "FULL-STACK DEVELOPER · LUBUMBASHI, DRC · REMOTE / HYBRID",
+    "title": "I build enterprise web apps and the mobile apps people carry.",
+    "subtitle": "C# and Blazor Server for the back office. Flutter for the phone. Clean Architecture, fast data access and release pipelines that take minutes, not hours.",
+    "cta_work": "See the case studies",
+    "cta_cv": "Download CV (PDF)",
+    "status_label": "OPEN TO WORK",
+    "status_text": "Building Kahvent, a wedding invitation app on Flutter and Supabase.",
+    "portrait_alt": "Portrait of Pierre Junior Kahozi"
   },
-  "about": {
-    "title": "About Me",
-    "summary": "Full-Stack Software Developer specializing in enterprise web applications (Blazor Server, C#, EF Core/Dapper) and cross-platform mobile development (Flutter, Dart, Riverpod). Applies Clean Architecture principles to build maintainable, scalable software, with a track record of high-performance data access layers, dynamic PDF/Excel reporting engines, and streamlined CI/CD pipelines.",
-    "education_title": "Education",
-    "cert_title": "Certifications"
+  "facts": {
+    "label": "Key facts",
+    "since": "Shipping production software since",
+    "pipeline": "Release pipeline after CI/CD rework",
+    "face_match": "Face-match threshold, AWS Rekognition sign-up",
+    "apps": "Client apps delivered, plus 1 live product"
+  },
+  "work": {
+    "label": "01 / SELECTED WORK",
+    "title": "Case studies",
+    "read": "Read case study →",
+    "open_live": "Open live app ↗",
+    "also": "Also:",
+    "also_rest": ", a weather app from my Flutter learning path (2022).",
+    "role": "Role",
+    "platforms": "Platforms",
+    "stack": "Stack",
+    "security": "Security"
+  },
+  "status": {
+    "live": "● LIVE · IN DEVELOPMENT",
+    "own": "OWN PRODUCT",
+    "retired": "DELIVERED FOR {} · RETIRED",
+    "learning": "LEARNING PROJECT"
   },
   "experience": {
-    "title": "Work Experience",
+    "label": "02 / EXPERIENCE",
+    "title": "Where I've worked",
+    "education": "National Diploma, Business Information Technology, University of Johannesburg (2017–2022).",
     "jobs": {
       "kcc": {
-        "role": "Full-Stack Developer Intern",
-        "company": "KCC",
-        "duration": "Feb 2026 - Present",
+        "role": "Software Developer Intern",
+        "duration": "FEB 2026 — OCT 2026",
         "items": {
-          "first": "Architected and developed APCMS, an enterprise security operations contract management system built on Blazor Server following layered Clean Architecture principles.",
-          "second": "Engineered a high-performance dual-ORM data access layer using EF Core for schema migrations and Dapper for latency-sensitive MSSQL queries.",
-          "third": "Implemented a decoupled handler/registry pattern to centralize resource-type rendering, audit logging, and UI status indicators.",
-          "fourth": "Delivered enterprise reporting capabilities by integrating QuestPDF for multi-page PDF generation and ClosedXML with row-streaming for reliable Excel import/export.",
-          "fifth": "Built dynamic MudBlazor multi-step contract creation forms with per-step validation alongside an interactive management dashboard using Chart.js via JavaScript Interop."
+          "first": "Built an internal Blazor Server application with layered Clean Architecture.",
+          "second": "Split data access: EF Core for schema, Dapper for latency-sensitive MSSQL queries.",
+          "third": "Shipped PDF (QuestPDF) and streamed Excel (ClosedXML) reporting."
         }
       },
-      "independent": {
-        "role": "Independent Software Developer & Upskilling",
-        "company": "Self-Directed",
-        "duration": "Jan 2025 - Jan 2026",
+      "upskilling": {
+        "role": "Upskilling",
+        "duration": "JAN 2025 — JAN 2026",
         "items": {
-          "first": "Conducted targeted technical research and upskilling in enterprise .NET design patterns, Blazor Server architecture, and advanced SQL query performance tuning.",
-          "second": "Engaged in independent technical project design and skill consolidation to drive proactive software engineering career growth."
+          "first": "Sharpened my skills through self-study while looking for my next role."
         }
       },
       "akrotech": {
         "role": "Junior Software Developer",
-        "company": "Akrotech",
-        "duration": "Sept 2022 - Dec 2024",
+        "duration": "SEPT 2022 — DEC 2024",
         "items": {
-          "first": "Developed mobile applications in Flutter and Dart, collaborating with UI/UX designers to translate design mockups into responsive, accessible cross-platform interfaces.",
-          "second": "Engineered and deployed production mobile solutions, including the Tahadhari App (Emergency Alert System) and Rosary App (Prayer Tracker with Firebase sync and offline support).",
-          "third": "Integrated the AWS Rekognition API during user registration, enforcing a 90% minimum confidence threshold for automated face verification.",
-          "fourth": "Applied Riverpod for predictable state management and built resilient RESTful API integration layers with structured error and offline handling.",
-          "fifth": "Configured CI/CD deployment automation using GitHub Actions and Codemagic, reducing manual release pipeline execution time from 15 minutes to under 2 minutes."
+          "first": "Delivered Tahadhari and Rosary to production in Flutter.",
+          "second": "Cut release time from 15 min to under 2 min with GitHub Actions and Codemagic.",
+          "third": "Added AWS Rekognition face checks at sign-up (90% confidence minimum)."
         }
       }
     }
   },
-  "sections": {
-    "experience": "Work Experience",
-    "featured_projects": "Featured Projects",
-    "skills": "Technical Skills"
+  "stack": {
+    "label": "03 / STACK",
+    "title": "What I use, grouped by job",
+    "web": "Web & back end",
+    "mobile": "Mobile",
+    "data": "Cloud & data",
+    "delivery": "Delivery"
   },
-  "footer": {
-    "work_together": "Let's Work Together",
-    "based_in": "Based in Lubumbashi, DRC. Available for remote & hybrid roles.",
-    "built_with": "Built with Flutter",
-    "linkedinProfile": "LinkedIn Profile"
+  "contact": {
+    "label": "04 / CONTACT",
+    "title": "Hiring for .NET or Flutter? Let's talk.",
+    "subtitle": "Open to remote and hybrid roles. I reply within two working days.",
+    "email": "Email me",
+    "linkedin": "LinkedIn ↗",
+    "cv": "CV · EN / FR",
+    "built_with": "Built with Flutter"
+  },
+  "study": {
+    "label": "CASE STUDY",
+    "problem": "The problem",
+    "built": "What I built",
+    "architecture": "Architecture",
+    "diagram_caption": "Request path from the user's phone to the backend.",
+    "decisions": "Key decisions",
+    "decision": "DECISION",
+    "code": "Code excerpt",
+    "screens": "Screens",
+    "role": "ROLE",
+    "stack": "STACK",
+    "platforms": "PLATFORMS",
+    "status": "STATUS",
+    "back": "← Back to all work",
+    "all_work": "← All work",
+    "next": "Next: {} →",
+    "not_found": "This case study doesn't exist.",
+    "screenshot": "Screenshot {} of {}",
+    "close": "Close",
+    "previous_shot": "Previous screenshot",
+    "next_shot": "Next screenshot"
   },
   "projects": {
-    "rosary": {
-      "title": "Rosary App",
-      "description": "A responsive prayer-tracking application with dynamic day-based content rendering. Integrated ad services for monetization."
+    "kahvent": {
+      "title": "Kahvent",
+      "summary": "Wedding invitations on paper get lost and can't be checked at the door. In Kahvent, each guest's link is both their invitation and their QR entry pass.",
+      "headline": "Kahvent: one link that is the invitation and the entry pass",
+      "period": "PERSONAL PROJECT · OCT 2026 — NOW",
+      "role": "Solo: product, design, full stack",
+      "platforms": "Android and web from one Flutter codebase",
+      "security": "Row-level security on every table, hashed link tokens",
+      "status": "Live, in development ↗",
+      "problem": {
+        "first": "Wedding hosts in Lubumbashi still print invitation cards. Cards get lost, guests forward photos of them, and the door team has no way to know who is really invited or how many seats a family was given.",
+        "second": "I wanted one thing a host can send by WhatsApp that also works at the door."
+      },
+      "features": {
+        "f1_title": "Guest links + QR pass",
+        "f1_body": "Each guest party gets one link. It shows the invitation and turns into a QR code at the door.",
+        "f2_title": "Team roles",
+        "f2_body": "Hosts invite helpers by team code. Each role sees only what it needs.",
+        "f3_title": "Seat planning",
+        "f3_body": "Seats are given per party, so a family of five uses one pass.",
+        "f4_title": "Excel / CSV import",
+        "f4_body": "Hosts paste the guest list they already have instead of typing it again."
+      },
+      "arch": {
+        "client": "Guest page · host dashboard · staff screens lazy-loaded",
+        "state": "Repositories behind providers",
+        "backend": "Auth · PostgreSQL with RLS and column grants",
+        "edge": "Static hosting, custom domain"
+      },
+      "decisions": {
+        "d1_title": "Permissions live in the database",
+        "d1_body": "Row-level security and column-level grants on every table, in versioned migrations. No permission depends on app code.",
+        "d2_title": "Link tokens stored only as hashes",
+        "d2_body": "A guest's link is their entry pass, so a database leak must not expose working links.",
+        "d3_title": "One codebase, staff screens lazy-loaded",
+        "d3_body": "Android and web from one Flutter app. Guests download only the guest page; staff-only screens load on demand."
+      },
+      "shot_card": "Kahvent dashboard showing upcoming events and guest counts",
+      "shot_hero": "Kahvent event overview with guest parties, RSVP status and seat counts"
     },
     "tahadhari": {
-      "title": "Tahadhari App",
-      "description": "An emergency alert application featuring real-time response capabilities, location services, and push notification systems."
+      "title": "Tahadhari",
+      "summary": "Emergency alert app. A user raises an alert, their location and next of kin are notified by push in real time. Face verification at sign-up with AWS Rekognition.",
+      "headline": "Tahadhari: real-time emergency alerts with verified users",
+      "period": "AKROTECH · 2022 — 2024",
+      "role": "Flutter developer in the Akrotech team",
+      "platforms": "Android and iOS",
+      "status": "Retired",
+      "problem": {
+        "first": "In an emergency, an alert is only useful if it arrives at once, shows where the person is, and comes from a real user.",
+        "second": "Tahadhari broadcasts real-time alerts with live location, in English and French, and checks every new account with a face match."
+      },
+      "features": {
+        "f1_title": "Live GPS tracking",
+        "f1_body": "The alert carries the user's live location, shown on a map.",
+        "f2_title": "Push alerts",
+        "f2_body": "Firebase Cloud Messaging delivers alerts in real time.",
+        "f3_title": "Face check at sign-up",
+        "f3_body": "AWS Rekognition must match the user's face with at least 90% confidence.",
+        "f4_title": "English and French",
+        "f4_body": "The whole app and its alerts are localized with Flutter."
+      },
+      "arch": {
+        "client": "Alert button · live map · EN / FR",
+        "state": "REST layer with structured error and offline handling",
+        "backend": "Firebase Cloud Messaging for real-time alerts",
+        "edge": "Face match at sign-up, 90% minimum"
+      },
+      "decisions": {
+        "d1_title": "Verify faces at sign-up",
+        "d1_body": "Only authentic profiles can register: AWS Rekognition must report at least 90% confidence.",
+        "d2_title": "Built for poor connectivity",
+        "d2_body": "Riverpod state and a REST layer with structured error and offline handling keep the app predictable.",
+        "d3_title": "Release in minutes",
+        "d3_body": "GitHub Actions and Codemagic cut the release pipeline from 15 minutes to under 2."
+      },
+      "shot_card": "Tahadhari map screen showing an active alert location",
+      "shot_hero": "Tahadhari map screen showing an active alert location"
+    },
+    "rosary": {
+      "title": "Rosary",
+      "summary": "Prayer tracker that shows the right mysteries for each day. Firebase sync with offline support, monetised with AdMob.",
+      "headline": "Rosary: a prayer tracker that works fully offline",
+      "period": "AKROTECH · 2022 — 2024",
+      "role": "Flutter developer in the Akrotech team",
+      "platforms": "Android and iOS",
+      "status": "Retired",
+      "problem": {
+        "first": "People pray where the connection is weak or absent, so a prayer app has to work without a network.",
+        "second": "Rosary shows the right content for each day, works fully offline and syncs in real time when the network comes back."
+      },
+      "features": {
+        "f1_title": "Day-based content",
+        "f1_body": "The app shows the right mysteries for the day of the week.",
+        "f2_title": "Offline first",
+        "f2_body": "Content is cached on the device, so the app works with no signal.",
+        "f3_title": "Real-time sync",
+        "f3_body": "Firestore syncs the user's progress across devices.",
+        "f4_title": "AdMob",
+        "f4_body": "Non-intrusive ads fund the app."
+      },
+      "arch": {
+        "client": "Daily prayers and progress",
+        "state": "Offline-first cache on the device",
+        "backend": "Firestore real-time sync",
+        "edge": "Non-intrusive ads"
+      },
+      "decisions": {
+        "d1_title": "Offline first",
+        "d1_body": "The device cache is the source the UI reads from; Firestore syncs in the background.",
+        "d2_title": "Content follows the calendar",
+        "d2_body": "Day-based liturgical content is picked on the device, so it works offline too.",
+        "d3_title": "Ads that stay out of the way",
+        "d3_body": "AdMob placements are non-intrusive, so prayer comes first."
+      },
+      "shot_card": "Rosary app daily prayer screen",
+      "shot_hero": "Rosary app daily prayer screen"
     },
     "clima": {
       "title": "Clima",
-      "description": "Weather mobile application to provide current weather information for the user's current location."
-    },
-    "kahvent": {
-      "title": "Kahvent",
-      "description": "Digital event invitations that replace paper cards: each guest Party gets a link that is both their invitation and their QR entry pass, with team roles, seat planning and Excel/CSV guest import."
+      "summary": "Weather app that shows the current weather for the user's location.",
+      "headline": "Clima: current weather for where you are",
+      "period": "LEARNING PROJECT · 2022",
+      "role": "Solo, Flutter bootcamp project",
+      "platforms": "Android and iOS",
+      "status": "Learning project",
+      "problem": {
+        "first": "A learning project from the Flutter bootcamp: call a real API, use device location and handle async data.",
+        "second": "Clima reads the phone's location and shows the current weather from OpenWeatherMap."
+      },
+      "features": {
+        "f1_title": "Location aware",
+        "f1_body": "Uses geolocation to find the user's city.",
+        "f2_title": "Live weather",
+        "f2_body": "Fetches current conditions from the OpenWeatherMap API."
+      },
+      "arch": {
+        "client": "Weather screen and city search",
+        "state": "Device location",
+        "backend": "Current conditions API"
+      },
+      "shot_card": "Clima weather screen",
+      "shot_hero": "Clima weather screen"
     }
   },
-  "buttons": {
-    "gallery": "Gallery",
-    "download_visit": "Download / Visit",
-    "view_gallery": "View Gallery",
-    "view_details": "View Details"
-  },
-  "status": {
-    "in_development": "In development"
-  },
-  "cannot_open_cv": "Could not open CV. Please try again later.",
   "cv_download_error_title": "Download Error",
   "cv_download_error_message": "Could not open the CV. The link may be broken or temporarily unavailable.",
   "cv_download_error_close": "Close"
