@@ -1,11 +1,11 @@
 {
-    "name": "my_portfolio",
-    "short_name": "my_portfolio",
+    "name": "Pierre Junior Kahozi | Full-Stack Developer",
+    "short_name": "Pierre Kahozi",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "My Portfolio",
+    "background_color": "#0B3B3C",
+    "theme_color": "#0B3B3C",
+    "description": "Portfolio of Pierre Junior Kahozi, full-stack developer (.NET and Flutter).",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
