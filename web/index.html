@@ -66,9 +66,28 @@
 
   <style>
     body { margin: 0; background: #0B3B3C; }
-    /* Plain-HTML version of the page. It is the loading screen while
-       Flutter starts, and it stays in the DOM (visually hidden) so search
-       engines and link previews always have real text to read. */
+
+    /* Loading screen shown until Flutter paints its first frame. */
+    #loader {
+      position: fixed; inset: 0; z-index: 10;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;
+      background: #0B3B3C; color: #FFFFFF;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      transition: opacity 300ms ease;
+    }
+    #loader .mark { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; }
+    #loader .mark span { color: #5EEAD4; }
+    #loader .role { margin: 0; font-family: ui-monospace, monospace; font-size: 12px; letter-spacing: 0.06em; color: #BFCDCB; }
+    #loader .bar { height: 3px; width: 160px; background: #1F6263; overflow: hidden; border-radius: 2px; }
+    #loader .bar::after { content: ""; display: block; height: 100%; width: 40%; background: #14B8A6; animation: slide 1.1s ease-in-out infinite; }
+    @keyframes slide { from { transform: translateX(-100%); } to { transform: translateX(250%); } }
+    @media (prefers-reduced-motion: reduce) { #loader .bar::after { animation: none; width: 100%; } }
+    .flutter-ready #loader { opacity: 0; pointer-events: none; }
+
+    /* Plain-HTML version of the page. Visually hidden but kept in the DOM,
+       so search engines and link previews always have real text to read.
+       It is shown only if Flutter can't start (no JavaScript, or a load
+       failure; see the timeout below). */
     #static-site {
       font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
       color: #FFFFFF;
@@ -82,22 +101,31 @@
     #static-site h2 { font-size: 24px; margin: 40px 0 8px; }
     #static-site p, #static-site li { color: #BFCDCB; max-width: 720px; }
     #static-site .eyebrow { font-family: ui-monospace, monospace; font-size: 13px; color: #5EEAD4; }
-    #static-site .loader { margin-top: 32px; height: 3px; width: 160px; background: #1F6263; overflow: hidden; border-radius: 2px; }
-    #static-site .loader::after { content: ""; display: block; height: 100%; width: 40%; background: #14B8A6; animation: slide 1.1s ease-in-out infinite; }
-    @keyframes slide { from { transform: translateX(-100%); } to { transform: translateX(250%); } }
-    @media (prefers-reduced-motion: reduce) { #static-site .loader::after { animation: none; } }
-    .flutter-ready #static-site {
+    body:not(.static-fallback) #static-site {
       position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
       overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
     }
+    .static-fallback #loader { display: none; }
   </style>
+  <noscript>
+    <style>
+      #loader { display: none; }
+      #static-site { position: static !important; width: auto !important; height: auto !important; margin: 0 auto !important; padding: 32px 20px 64px !important; overflow: visible !important; clip: auto !important; white-space: normal !important; }
+    </style>
+  </noscript>
 </head>
 <body>
+  <div id="loader" role="status" aria-live="polite">
+    <div class="mark" aria-hidden="true">pierre<span>.kahozi</span></div>
+    <p class="role" aria-hidden="true">FULL-STACK DEVELOPER</p>
+    <div class="bar" aria-hidden="true"></div>
+    <span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Loading Pierre Junior Kahozi's portfolio</span>
+  </div>
+
   <main id="static-site">
     <p class="eyebrow">FULL-STACK DEVELOPER · LUBUMBASHI, DRC · REMOTE / HYBRID</p>
     <h1>Pierre Junior Kahozi: I build enterprise web apps and the mobile apps people carry.</h1>
     <p>C# and Blazor Server for the back office. Flutter for the phone. Clean Architecture, fast data access and release pipelines that take minutes, not hours.</p>
-    <div class="loader" role="progressbar" aria-label="Loading"></div>
 
     <h2>Case studies</h2>
     <ul>
@@ -119,10 +147,21 @@
   </main>
 
   <script>
-    // Flutter fires this once its first frame is on screen.
+    var flutterReady = false;
+    // Flutter fires this once its first frame is on screen: fade the
+    // loader out, then remove it.
     window.addEventListener('flutter-first-frame', function () {
+      flutterReady = true;
+      document.body.classList.remove('static-fallback');
       document.body.classList.add('flutter-ready');
+      var loader = document.getElementById('loader');
+      setTimeout(function () { loader && loader.remove(); }, 400);
     });
+    // If Flutter hasn't started after 20 s (blocked script, very slow
+    // network), show the plain-HTML page instead of an endless spinner.
+    setTimeout(function () {
+      if (!flutterReady) document.body.classList.add('static-fallback');
+    }, 20000);
   </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
