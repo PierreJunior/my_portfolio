@@ -27,6 +27,9 @@ jobs:
       - name: Run Dart Analyzer
         run: flutter analyze
 
+      - name: Run Tests
+        run: flutter test
+
       - name: Build Web Application
         run: flutter build web --release
 
