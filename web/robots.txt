@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pierrejunior-portfolio.web.app/sitemap.xml
+Sitemap: https://pierrekahozi.com/sitemap.xml
