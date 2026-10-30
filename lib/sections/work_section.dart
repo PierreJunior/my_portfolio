@@ -167,11 +167,15 @@ class FeaturedProjectCard extends StatelessWidget {
         if (constraints.maxWidth < 900) {
           return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [image, details]);
         }
-        return IntrinsicHeight(
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [Expanded(flex: 3, child: image), Expanded(flex: 2, child: details)],
-          ),
+        // The details column sets the card height and the screenshot fills
+        // the space beside it. IntrinsicHeight underestimated the column
+        // (the links' heights) and clipped the buttons.
+        final imageWidth = constraints.maxWidth * 3 / 5;
+        return Stack(
+          children: [
+            Positioned(left: 0, top: 0, bottom: 0, width: imageWidth, child: image),
+            Padding(padding: EdgeInsets.only(left: imageWidth), child: details),
+          ],
         );
       }),
     );
@@ -231,24 +235,21 @@ class ProjectCard extends StatelessWidget {
               borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
             ),
           ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(28),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Wrap(spacing: 8, runSpacing: 8, children: statusPills(project)),
-                  const SizedBox(height: 14),
-                  Semantics(header: true, child: Text(project.titleKey.tr(), style: AppFonts.display(size: 26))),
-                  const SizedBox(height: 10),
-                  Text(project.summaryKey.tr(), style: AppFonts.body(size: 15, color: AppColors.textBody)),
-                  const SizedBox(height: 12),
-                  Text(project.stack, style: AppFonts.mono(size: 13, weight: FontWeight.w400, color: AppColors.textMuted)),
-                  const Spacer(),
-                  const SizedBox(height: 12),
-                  AppTextLink(label: LocaleKeys.work_read.tr(), uri: Uri.parse(project.route)),
-                ],
-              ),
+          Padding(
+            padding: const EdgeInsets.all(28),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Wrap(spacing: 8, runSpacing: 8, children: statusPills(project)),
+                const SizedBox(height: 14),
+                Semantics(header: true, child: Text(project.titleKey.tr(), style: AppFonts.display(size: 26))),
+                const SizedBox(height: 10),
+                Text(project.summaryKey.tr(), style: AppFonts.body(size: 15, color: AppColors.textBody)),
+                const SizedBox(height: 12),
+                Text(project.stack, style: AppFonts.mono(size: 13, weight: FontWeight.w400, color: AppColors.textMuted)),
+                const SizedBox(height: 12),
+                AppTextLink(label: LocaleKeys.work_read.tr(), uri: Uri.parse(project.route)),
+              ],
             ),
           ),
         ],
