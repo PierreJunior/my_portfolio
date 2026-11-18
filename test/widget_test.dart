@@ -1,5 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:my_portfolio/lang/codegen_loader.g.dart';
 import 'package:my_portfolio/main.dart';
@@ -31,7 +31,7 @@ void main() {
     await EasyLocalization.ensureInitialized();
   });
 
-  testWidgets('home shows hero, case studies and Kamoto Copper Company', (tester) async {
+  testWidgets('home shows hero, projects and Kamoto Copper Company', (tester) async {
     await _pumpSite(tester);
 
     expect(find.text('I build enterprise web apps and the mobile apps people carry.'), findsOneWidget);
@@ -56,10 +56,10 @@ void main() {
 
     await tester.tap(find.text('FR'));
     await tester.pumpAndSettle();
-    expect(find.text('Études de cas'), findsOneWidget);
+    expect(find.text('Voir mes projets'), findsOneWidget);
   });
 
-  testWidgets('case study route renders its sections', (tester) async {
+  testWidgets('project route renders its sections', (tester) async {
     await _pumpSite(tester, location: '/work/kahvent');
 
     expect(find.text('Kahvent: one link that is the invitation and the entry pass'), findsOneWidget);
@@ -68,9 +68,24 @@ void main() {
     expect(find.text('Results so far'), findsNothing);
   });
 
-  testWidgets('unknown case study shows a not-found message', (tester) async {
+  testWidgets('unknown project shows a not-found message', (tester) async {
     await _pumpSite(tester, location: '/work/apcms');
 
-    expect(find.text("This case study doesn't exist."), findsOneWidget);
+    expect(find.text("This project doesn't exist."), findsOneWidget);
+  });
+
+  testWidgets('beta page lists the three steps to install', (tester) async {
+    await _pumpSite(tester, location: '/beta/kahvent');
+
+    expect(find.text('Install Kahvent on Android'), findsOneWidget);
+    expect(find.text('Join the testers group'), findsOneWidget);
+    expect(find.text('Become a tester'), findsOneWidget);
+    expect(find.text('Install the app'), findsOneWidget);
+  });
+
+  testWidgets('beta page for a project without a closed test shows not-found', (tester) async {
+    await _pumpSite(tester, location: '/beta/tahadhari');
+
+    expect(find.text("This project doesn't exist."), findsOneWidget);
   });
 }

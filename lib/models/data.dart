@@ -164,6 +164,13 @@ class Project {
   /// Phone screenshots are tall and get a narrow phone frame on cards.
   final bool phoneShots;
   final String? liveUrl;
+
+  /// Closed testing on Google Play: the public Google Group that is the
+  /// track's tester list, the opt-in page, and the store listing testers
+  /// install from once they have joined.
+  final String? testersGroupUrl;
+  final String? playTestingUrl;
+  final String? playStoreUrl;
   final int featureCount;
   final int decisionCount;
   final List<ArchNode> architecture;
@@ -182,6 +189,9 @@ class Project {
     this.client,
     this.phoneShots = true,
     this.liveUrl,
+    this.testersGroupUrl,
+    this.playTestingUrl,
+    this.playStoreUrl,
     this.featureCount = 4,
     this.decisionCount = 3,
     this.featured = false,
@@ -192,6 +202,10 @@ class Project {
   String get titleKey => key('title');
   String get summaryKey => key('summary');
   String get route => '/work/$slug';
+  String get betaRoute => '/beta/$slug';
+
+  /// Whether the project has a Google Play closed test visitors can join.
+  bool get hasBeta => testersGroupUrl != null && playTestingUrl != null && playStoreUrl != null;
 
   List<String> get problemKeys => [key('problem.first'), key('problem.second')];
 
@@ -214,6 +228,9 @@ final List<Project> projects = [
     phoneShots: false,
     stack: "Flutter · Supabase · PostgreSQL · Riverpod",
     liveUrl: "https://kahvent.pierrekahozi.com",
+    testersGroupUrl: "https://groups.google.com/g/kahvent-testers",
+    playTestingUrl: "https://play.google.com/apps/testing/com.kahvent.kahvent",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.kahvent.kahvent",
     cardImage: "assets/Kahvent_Dashboard.png",
     heroImage: "assets/Kahvent_EventOverview.png",
     screenshots: [

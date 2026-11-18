@@ -1,5 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:my_portfolio/sections/experience_section.dart';
 import 'package:my_portfolio/sections/footer_section.dart';
 import 'package:my_portfolio/sections/header_section.dart';
