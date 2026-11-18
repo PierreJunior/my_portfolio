@@ -56,7 +56,7 @@ void main() {
 
     await tester.tap(find.text('FR'));
     await tester.pumpAndSettle();
-    expect(find.text('Voir les projets'), findsOneWidget);
+    expect(find.text('Voir mes projets'), findsOneWidget);
   });
 
   testWidgets('project route renders its sections', (tester) async {
