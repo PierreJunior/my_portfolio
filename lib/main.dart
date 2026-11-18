@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:go_router/go_router.dart';
@@ -69,7 +69,14 @@ class MyPortfolio extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerConfig: router ?? _router,
-      localizationsDelegates: context.localizationDelegates,
+      // easy_localization's own delegate, plus the material_ui ones.
+      // `context.localizationDelegates` would add the flutter_localizations
+      // delegates, which material_ui's MaterialApp no longer recognises, so
+      // French fails with "no MaterialLocalizations delegate".
+      localizationsDelegates: [
+        context.localizationDelegates.first,
+        ...GlobalMaterialLocalizations.delegates,
+      ],
       supportedLocales: context.supportedLocales,
       locale: context.locale,
       title: 'Pierre Junior Kahozi | Full-Stack Software Developer',
