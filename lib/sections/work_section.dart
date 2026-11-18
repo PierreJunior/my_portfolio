@@ -150,13 +150,11 @@ class FeaturedProjectCard extends StatelessWidget {
                   newTab: true,
                   expand: mobile,
                 ),
-              // The group is step 1 of joining; the project page lists the rest.
-              if (project.testersGroupUrl != null)
+              if (project.hasBeta)
                 AppLinkButton(
                   label: LocaleKeys.work_join_beta.tr(),
-                  uri: Uri.parse(project.testersGroupUrl!),
+                  uri: Uri.parse(project.betaRoute),
                   style: AppButtonStyle.outline,
-                  newTab: true,
                   expand: mobile,
                 ),
             ],

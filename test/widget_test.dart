@@ -73,4 +73,19 @@ void main() {
 
     expect(find.text("This project doesn't exist."), findsOneWidget);
   });
+
+  testWidgets('beta page lists the three steps to install', (tester) async {
+    await _pumpSite(tester, location: '/beta/kahvent');
+
+    expect(find.text('Install Kahvent on Android'), findsOneWidget);
+    expect(find.text('Join the testers group'), findsOneWidget);
+    expect(find.text('Become a tester'), findsOneWidget);
+    expect(find.text('Install the app'), findsOneWidget);
+  });
+
+  testWidgets('beta page for a project without a closed test shows not-found', (tester) async {
+    await _pumpSite(tester, location: '/beta/tahadhari');
+
+    expect(find.text("This project doesn't exist."), findsOneWidget);
+  });
 }

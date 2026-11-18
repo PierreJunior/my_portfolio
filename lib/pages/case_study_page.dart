@@ -180,7 +180,7 @@ class _CaseHeader extends StatelessWidget {
                 ),
               ),
       ),
-      if (project.testersGroupUrl != null && project.playTestingUrl != null && project.playStoreUrl != null)
+      if (project.hasBeta)
         (
           LocaleKeys.study_android.tr(),
           Column(
@@ -188,21 +188,8 @@ class _CaseHeader extends StatelessWidget {
             children: [
               _factValue(LocaleKeys.study_android_text.tr()),
               AppTextLink(
-                label: LocaleKeys.study_join_group.tr(),
-                uri: Uri.parse(project.testersGroupUrl!),
-                newTab: true,
-                color: AppColors.accentSoft,
-              ),
-              AppTextLink(
-                label: LocaleKeys.study_join_test.tr(),
-                uri: Uri.parse(project.playTestingUrl!),
-                newTab: true,
-                color: AppColors.accentSoft,
-              ),
-              AppTextLink(
-                label: LocaleKeys.study_install_play.tr(),
-                uri: Uri.parse(project.playStoreUrl!),
-                newTab: true,
+                label: LocaleKeys.study_join_beta.tr(),
+                uri: Uri.parse(project.betaRoute),
                 color: AppColors.accentSoft,
               ),
             ],

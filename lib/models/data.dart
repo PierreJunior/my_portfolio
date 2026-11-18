@@ -202,6 +202,10 @@ class Project {
   String get titleKey => key('title');
   String get summaryKey => key('summary');
   String get route => '/work/$slug';
+  String get betaRoute => '/beta/$slug';
+
+  /// Whether the project has a Google Play closed test visitors can join.
+  bool get hasBeta => testersGroupUrl != null && playTestingUrl != null && playStoreUrl != null;
 
   List<String> get problemKeys => [key('problem.first'), key('problem.second')];
 

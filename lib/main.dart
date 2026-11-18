@@ -6,6 +6,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_portfolio/firebase_options.dart';
+import 'package:my_portfolio/pages/beta_page.dart';
 import 'package:my_portfolio/pages/case_study_page.dart';
 import 'package:my_portfolio/pages/home_page.dart';
 import 'package:my_portfolio/services/content_overrides.dart';
@@ -48,6 +49,10 @@ GoRouter buildRouter({String initialLocation = '/'}) => GoRouter(
         GoRoute(
           path: '/work/:slug',
           builder: (context, state) => CaseStudyPage(slug: state.pathParameters['slug']!),
+        ),
+        GoRoute(
+          path: '/beta/:slug',
+          builder: (context, state) => BetaPage(slug: state.pathParameters['slug']!),
         ),
       ],
       errorBuilder: (context, state) => const CaseStudyPage(slug: ''),
