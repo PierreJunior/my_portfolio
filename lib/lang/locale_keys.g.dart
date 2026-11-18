@@ -30,6 +30,7 @@ abstract class  LocaleKeys {
   static const work_title = 'work.title';
   static const work_read = 'work.read';
   static const work_open_live = 'work.open_live';
+  static const work_join_beta = 'work.join_beta';
   static const work_also = 'work.also';
   static const work_also_rest = 'work.also_rest';
   static const work_role = 'work.role';
@@ -94,6 +95,11 @@ abstract class  LocaleKeys {
   static const study_stack = 'study.stack';
   static const study_platforms = 'study.platforms';
   static const study_status = 'study.status';
+  static const study_android = 'study.android';
+  static const study_android_text = 'study.android_text';
+  static const study_join_group = 'study.join_group';
+  static const study_join_test = 'study.join_test';
+  static const study_install_play = 'study.install_play';
   static const study_back = 'study.back';
   static const study_all_work = 'study.all_work';
   static const study_next = 'study.next';

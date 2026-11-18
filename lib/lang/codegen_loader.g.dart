@@ -28,7 +28,7 @@ class CodegenLoader extends AssetLoader{
     "eyebrow": "FULL-STACK DEVELOPER · LUBUMBASHI, DRC · REMOTE / HYBRID",
     "title": "I build enterprise web apps and the mobile apps people carry.",
     "subtitle": "C# and Blazor Server for the back office. Flutter for the phone. Clean Architecture, fast data access and release pipelines that take minutes, not hours.",
-    "cta_work": "See the case studies",
+    "cta_work": "See the projects",
     "cta_cv": "Download CV (PDF)",
     "status_label": "OPEN TO WORK",
     "status_text": "Building Kahvent, a wedding invitation app on Flutter and Supabase.",
@@ -43,9 +43,10 @@ class CodegenLoader extends AssetLoader{
   },
   "work": {
     "label": "01 / SELECTED WORK",
-    "title": "Case studies",
-    "read": "Read case study →",
+    "title": "Projects",
+    "read": "Read more →",
     "open_live": "Open live app ↗",
+    "join_beta": "Join the Android beta ↗",
     "also": "Also:",
     "also_rest": ", a weather app from my Flutter learning path (2022).",
     "role": "Role",
@@ -54,7 +55,7 @@ class CodegenLoader extends AssetLoader{
     "security": "Security"
   },
   "status": {
-    "live": "● LIVE · IN DEVELOPMENT",
+    "live": "● LIVE · ANDROID IN CLOSED TESTING",
     "own": "OWN PRODUCT",
     "retired": "DELIVERED FOR {} · RETIRED",
     "learning": "LEARNING PROJECT"
@@ -109,7 +110,7 @@ class CodegenLoader extends AssetLoader{
     "built_with": "Built with Flutter"
   },
   "study": {
-    "label": "CASE STUDY",
+    "label": "PROJECT",
     "problem": "The problem",
     "built": "What I built",
     "architecture": "Architecture",
@@ -122,10 +123,15 @@ class CodegenLoader extends AssetLoader{
     "stack": "STACK",
     "platforms": "PLATFORMS",
     "status": "STATUS",
+    "android": "ANDROID",
+    "android_text": "In closed testing on Google Play. Use the same Google account as your Play Store.",
+    "join_group": "1. Join the testers group ↗",
+    "join_test": "2. Join the test ↗",
+    "install_play": "3. Install from Google Play ↗",
     "back": "← Back to all work",
     "all_work": "← All work",
     "next": "Next: {} →",
-    "not_found": "This case study doesn't exist.",
+    "not_found": "This project doesn't exist.",
     "screenshot": "Screenshot {} of {}",
     "close": "Close",
     "previous_shot": "Previous screenshot",
@@ -140,7 +146,7 @@ class CodegenLoader extends AssetLoader{
       "role": "Solo: product, design, full stack",
       "platforms": "Android and web from one Flutter codebase",
       "security": "Row-level security on every table, hashed link tokens",
-      "status": "Live, in development ↗",
+      "status": "Live on the web ↗",
       "problem": {
         "first": "Wedding hosts in Lubumbashi still print invitation cards. Cards get lost, guests forward photos of them, and the door team has no way to know who is really invited or how many seats a family was given.",
         "second": "I wanted one thing a host can send by WhatsApp that also works at the door."
@@ -295,7 +301,7 @@ static const Map<String,dynamic> _fr = {
     "eyebrow": "DÉVELOPPEUR FULL-STACK · LUBUMBASHI, RDC · À DISTANCE / HYBRIDE",
     "title": "Je crée des applications web d'entreprise et les applications mobiles qu'on garde en poche.",
     "subtitle": "C# et Blazor Server pour le back-office. Flutter pour le téléphone. Clean Architecture, accès aux données rapide et pipelines de publication qui prennent des minutes, pas des heures.",
-    "cta_work": "Voir les études de cas",
+    "cta_work": "Voir les projets",
     "cta_cv": "Télécharger le CV (PDF)",
     "status_label": "DISPONIBLE",
     "status_text": "Je développe Kahvent, une application d'invitations de mariage en Flutter et Supabase.",
@@ -310,9 +316,10 @@ static const Map<String,dynamic> _fr = {
   },
   "work": {
     "label": "01 / PROJETS CHOISIS",
-    "title": "Études de cas",
-    "read": "Lire l'étude de cas →",
+    "title": "Projets",
+    "read": "En savoir plus →",
     "open_live": "Ouvrir l'application ↗",
+    "join_beta": "Rejoindre la bêta Android ↗",
     "also": "Aussi :",
     "also_rest": ", une application météo de mon apprentissage Flutter (2022).",
     "role": "Rôle",
@@ -321,7 +328,7 @@ static const Map<String,dynamic> _fr = {
     "security": "Sécurité"
   },
   "status": {
-    "live": "● EN LIGNE · EN DÉVELOPPEMENT",
+    "live": "● EN LIGNE · ANDROID EN TEST FERMÉ",
     "own": "PROJET PERSONNEL",
     "retired": "LIVRÉ POUR {} · RETIRÉ",
     "learning": "PROJET D'APPRENTISSAGE"
@@ -376,7 +383,7 @@ static const Map<String,dynamic> _fr = {
     "built_with": "Construit avec Flutter"
   },
   "study": {
-    "label": "ÉTUDE DE CAS",
+    "label": "PROJET",
     "problem": "Le problème",
     "built": "Ce que j'ai construit",
     "architecture": "Architecture",
@@ -389,10 +396,15 @@ static const Map<String,dynamic> _fr = {
     "stack": "STACK",
     "platforms": "PLATEFORMES",
     "status": "STATUT",
+    "android": "ANDROID",
+    "android_text": "En test fermé sur Google Play. Utilisez le même compte Google que sur le Play Store.",
+    "join_group": "1. Rejoindre le groupe de testeurs ↗",
+    "join_test": "2. Rejoindre le test ↗",
+    "install_play": "3. Installer depuis Google Play ↗",
     "back": "← Retour aux projets",
     "all_work": "← Tous les projets",
     "next": "Suivant : {} →",
-    "not_found": "Cette étude de cas n'existe pas.",
+    "not_found": "Ce projet n'existe pas.",
     "screenshot": "Capture {} sur {}",
     "close": "Fermer",
     "previous_shot": "Capture précédente",
@@ -407,7 +419,7 @@ static const Map<String,dynamic> _fr = {
       "role": "Seul : produit, design, full-stack",
       "platforms": "Android et web avec une seule base de code Flutter",
       "security": "Sécurité au niveau des lignes sur chaque table, jetons de lien hachés",
-      "status": "En ligne, en développement ↗",
+      "status": "En ligne sur le web ↗",
       "problem": {
         "first": "À Lubumbashi, les organisateurs de mariage impriment encore des cartes d'invitation. Les cartes se perdent, les invités en transfèrent des photos, et l'équipe à l'entrée ne peut pas savoir qui est vraiment invité ni combien de places une famille a reçues.",
         "second": "Je voulais une seule chose qu'un organisateur puisse envoyer par WhatsApp et qui fonctionne aussi à l'entrée."

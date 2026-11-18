@@ -31,7 +31,7 @@ void main() {
     await EasyLocalization.ensureInitialized();
   });
 
-  testWidgets('home shows hero, case studies and Kamoto Copper Company', (tester) async {
+  testWidgets('home shows hero, projects and Kamoto Copper Company', (tester) async {
     await _pumpSite(tester);
 
     expect(find.text('I build enterprise web apps and the mobile apps people carry.'), findsOneWidget);
@@ -56,10 +56,10 @@ void main() {
 
     await tester.tap(find.text('FR'));
     await tester.pumpAndSettle();
-    expect(find.text('Études de cas'), findsOneWidget);
+    expect(find.text('Voir les projets'), findsOneWidget);
   });
 
-  testWidgets('case study route renders its sections', (tester) async {
+  testWidgets('project route renders its sections', (tester) async {
     await _pumpSite(tester, location: '/work/kahvent');
 
     expect(find.text('Kahvent: one link that is the invitation and the entry pass'), findsOneWidget);
@@ -68,9 +68,9 @@ void main() {
     expect(find.text('Results so far'), findsNothing);
   });
 
-  testWidgets('unknown case study shows a not-found message', (tester) async {
+  testWidgets('unknown project shows a not-found message', (tester) async {
     await _pumpSite(tester, location: '/work/apcms');
 
-    expect(find.text("This case study doesn't exist."), findsOneWidget);
+    expect(find.text("This project doesn't exist."), findsOneWidget);
   });
 }

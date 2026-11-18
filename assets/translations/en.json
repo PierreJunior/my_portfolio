@@ -12,7 +12,7 @@
     "eyebrow": "FULL-STACK DEVELOPER · LUBUMBASHI, DRC · REMOTE / HYBRID",
     "title": "I build enterprise web apps and the mobile apps people carry.",
     "subtitle": "C# and Blazor Server for the back office. Flutter for the phone. Clean Architecture, fast data access and release pipelines that take minutes, not hours.",
-    "cta_work": "See the case studies",
+    "cta_work": "See the projects",
     "cta_cv": "Download CV (PDF)",
     "status_label": "OPEN TO WORK",
     "status_text": "Building Kahvent, a wedding invitation app on Flutter and Supabase.",
@@ -27,9 +27,10 @@
   },
   "work": {
     "label": "01 / SELECTED WORK",
-    "title": "Case studies",
-    "read": "Read case study →",
+    "title": "Projects",
+    "read": "Read more →",
     "open_live": "Open live app ↗",
+    "join_beta": "Join the Android beta ↗",
     "also": "Also:",
     "also_rest": ", a weather app from my Flutter learning path (2022).",
     "role": "Role",
@@ -38,7 +39,7 @@
     "security": "Security"
   },
   "status": {
-    "live": "● LIVE · IN DEVELOPMENT",
+    "live": "● LIVE · ANDROID IN CLOSED TESTING",
     "own": "OWN PRODUCT",
     "retired": "DELIVERED FOR {} · RETIRED",
     "learning": "LEARNING PROJECT"
@@ -93,7 +94,7 @@
     "built_with": "Built with Flutter"
   },
   "study": {
-    "label": "CASE STUDY",
+    "label": "PROJECT",
     "problem": "The problem",
     "built": "What I built",
     "architecture": "Architecture",
@@ -106,10 +107,15 @@
     "stack": "STACK",
     "platforms": "PLATFORMS",
     "status": "STATUS",
+    "android": "ANDROID",
+    "android_text": "In closed testing on Google Play. Use the same Google account as your Play Store.",
+    "join_group": "1. Join the testers group ↗",
+    "join_test": "2. Join the test ↗",
+    "install_play": "3. Install from Google Play ↗",
     "back": "← Back to all work",
     "all_work": "← All work",
     "next": "Next: {} →",
-    "not_found": "This case study doesn't exist.",
+    "not_found": "This project doesn't exist.",
     "screenshot": "Screenshot {} of {}",
     "close": "Close",
     "previous_shot": "Previous screenshot",
@@ -124,7 +130,7 @@
       "role": "Solo: product, design, full stack",
       "platforms": "Android and web from one Flutter codebase",
       "security": "Row-level security on every table, hashed link tokens",
-      "status": "Live, in development ↗",
+      "status": "Live on the web ↗",
       "problem": {
         "first": "Wedding hosts in Lubumbashi still print invitation cards. Cards get lost, guests forward photos of them, and the door team has no way to know who is really invited or how many seats a family was given.",
         "second": "I wanted one thing a host can send by WhatsApp that also works at the door."

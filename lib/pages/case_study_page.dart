@@ -180,6 +180,34 @@ class _CaseHeader extends StatelessWidget {
                 ),
               ),
       ),
+      if (project.testersGroupUrl != null && project.playTestingUrl != null && project.playStoreUrl != null)
+        (
+          LocaleKeys.study_android.tr(),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _factValue(LocaleKeys.study_android_text.tr()),
+              AppTextLink(
+                label: LocaleKeys.study_join_group.tr(),
+                uri: Uri.parse(project.testersGroupUrl!),
+                newTab: true,
+                color: AppColors.accentSoft,
+              ),
+              AppTextLink(
+                label: LocaleKeys.study_join_test.tr(),
+                uri: Uri.parse(project.playTestingUrl!),
+                newTab: true,
+                color: AppColors.accentSoft,
+              ),
+              AppTextLink(
+                label: LocaleKeys.study_install_play.tr(),
+                uri: Uri.parse(project.playStoreUrl!),
+                newTab: true,
+                color: AppColors.accentSoft,
+              ),
+            ],
+          ),
+        ),
     ];
 
     return PageWidth(
