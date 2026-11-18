@@ -1,5 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:my_portfolio/lang/locale_keys.g.dart';
 import 'package:my_portfolio/models/data.dart';
 import 'package:my_portfolio/theme/app_theme.dart';
@@ -148,6 +148,13 @@ class FeaturedProjectCard extends StatelessWidget {
                   uri: Uri.parse(project.liveUrl!),
                   style: AppButtonStyle.outline,
                   newTab: true,
+                  expand: mobile,
+                ),
+              if (project.hasBeta)
+                AppLinkButton(
+                  label: LocaleKeys.work_join_beta.tr(),
+                  uri: Uri.parse(project.betaRoute),
+                  style: AppButtonStyle.outline,
                   expand: mobile,
                 ),
             ],

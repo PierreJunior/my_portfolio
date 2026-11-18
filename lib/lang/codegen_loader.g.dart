@@ -28,7 +28,7 @@ class CodegenLoader extends AssetLoader{
     "eyebrow": "FULL-STACK DEVELOPER · LUBUMBASHI, DRC · REMOTE / HYBRID",
     "title": "I build enterprise web apps and the mobile apps people carry.",
     "subtitle": "C# and Blazor Server for the back office. Flutter for the phone. Clean Architecture, fast data access and release pipelines that take minutes, not hours.",
-    "cta_work": "See the case studies",
+    "cta_work": "See my projects",
     "cta_cv": "Download CV (PDF)",
     "status_label": "OPEN TO WORK",
     "status_text": "Building Kahvent, a wedding invitation app on Flutter and Supabase.",
@@ -43,9 +43,10 @@ class CodegenLoader extends AssetLoader{
   },
   "work": {
     "label": "01 / SELECTED WORK",
-    "title": "Case studies",
-    "read": "Read case study →",
+    "title": "Projects",
+    "read": "Read more →",
     "open_live": "Open live app ↗",
+    "join_beta": "Get the Android beta →",
     "also": "Also:",
     "also_rest": ", a weather app from my Flutter learning path (2022).",
     "role": "Role",
@@ -54,7 +55,7 @@ class CodegenLoader extends AssetLoader{
     "security": "Security"
   },
   "status": {
-    "live": "● LIVE · IN DEVELOPMENT",
+    "live": "● LIVE · ANDROID IN CLOSED TESTING",
     "own": "OWN PRODUCT",
     "retired": "DELIVERED FOR {} · RETIRED",
     "learning": "LEARNING PROJECT"
@@ -109,7 +110,7 @@ class CodegenLoader extends AssetLoader{
     "built_with": "Built with Flutter"
   },
   "study": {
-    "label": "CASE STUDY",
+    "label": "PROJECT",
     "problem": "The problem",
     "built": "What I built",
     "architecture": "Architecture",
@@ -122,14 +123,35 @@ class CodegenLoader extends AssetLoader{
     "stack": "STACK",
     "platforms": "PLATFORMS",
     "status": "STATUS",
+    "android": "ANDROID",
+    "android_text": "In closed testing on Google Play.",
+    "join_beta": "How to install the beta →",
     "back": "← Back to all work",
     "all_work": "← All work",
     "next": "Next: {} →",
-    "not_found": "This case study doesn't exist.",
+    "not_found": "This project doesn't exist.",
     "screenshot": "Screenshot {} of {}",
     "close": "Close",
     "previous_shot": "Previous screenshot",
     "next_shot": "Next screenshot"
+  },
+  "beta": {
+    "label": "ANDROID BETA · {}",
+    "title": "Install {} on Android",
+    "intro": "{} is in closed testing on Google Play. Joining takes three steps and about two minutes. Keep this page open: each step opens in a new tab.",
+    "account": "Use the Google account that's on your Android phone's Play Store for every step. With a different account, the app won't show up.",
+    "step": "STEP {}",
+    "s1_title": "Join the testers group",
+    "s1_body": "Sign in to Google, then click \"Join group\". After joining, the group page shows nothing else. That's normal: come back here for step 2.",
+    "s1_button": "Open the testers group ↗",
+    "s2_title": "Become a tester",
+    "s2_body": "Click \"Become a tester\". If Google Play says the app isn't available, wait a minute after joining the group and reload the page.",
+    "s2_button": "Open the testing page ↗",
+    "s3_title": "Install the app",
+    "s3_body": "Install {} from Google Play. On a computer, pick your phone and Play installs it there.",
+    "s3_button": "Open in Google Play ↗",
+    "no_android": "No Android phone? Use the web app ↗",
+    "back": "← Back to {}"
   },
   "projects": {
     "kahvent": {
@@ -140,7 +162,7 @@ class CodegenLoader extends AssetLoader{
       "role": "Solo: product, design, full stack",
       "platforms": "Android and web from one Flutter codebase",
       "security": "Row-level security on every table, hashed link tokens",
-      "status": "Live, in development ↗",
+      "status": "Live on the web ↗",
       "problem": {
         "first": "Wedding hosts in Lubumbashi still print invitation cards. Cards get lost, guests forward photos of them, and the door team has no way to know who is really invited or how many seats a family was given.",
         "second": "I wanted one thing a host can send by WhatsApp that also works at the door."
@@ -295,7 +317,7 @@ static const Map<String,dynamic> _fr = {
     "eyebrow": "DÉVELOPPEUR FULL-STACK · LUBUMBASHI, RDC · À DISTANCE / HYBRIDE",
     "title": "Je crée des applications web d'entreprise et les applications mobiles qu'on garde en poche.",
     "subtitle": "C# et Blazor Server pour le back-office. Flutter pour le téléphone. Clean Architecture, accès aux données rapide et pipelines de publication qui prennent des minutes, pas des heures.",
-    "cta_work": "Voir les études de cas",
+    "cta_work": "Voir mes projets",
     "cta_cv": "Télécharger le CV (PDF)",
     "status_label": "DISPONIBLE",
     "status_text": "Je développe Kahvent, une application d'invitations de mariage en Flutter et Supabase.",
@@ -310,9 +332,10 @@ static const Map<String,dynamic> _fr = {
   },
   "work": {
     "label": "01 / PROJETS CHOISIS",
-    "title": "Études de cas",
-    "read": "Lire l'étude de cas →",
+    "title": "Projets",
+    "read": "En savoir plus →",
     "open_live": "Ouvrir l'application ↗",
+    "join_beta": "Obtenir la bêta Android →",
     "also": "Aussi :",
     "also_rest": ", une application météo de mon apprentissage Flutter (2022).",
     "role": "Rôle",
@@ -321,7 +344,7 @@ static const Map<String,dynamic> _fr = {
     "security": "Sécurité"
   },
   "status": {
-    "live": "● EN LIGNE · EN DÉVELOPPEMENT",
+    "live": "● EN LIGNE · ANDROID EN TEST FERMÉ",
     "own": "PROJET PERSONNEL",
     "retired": "LIVRÉ POUR {} · RETIRÉ",
     "learning": "PROJET D'APPRENTISSAGE"
@@ -376,7 +399,7 @@ static const Map<String,dynamic> _fr = {
     "built_with": "Construit avec Flutter"
   },
   "study": {
-    "label": "ÉTUDE DE CAS",
+    "label": "PROJET",
     "problem": "Le problème",
     "built": "Ce que j'ai construit",
     "architecture": "Architecture",
@@ -389,14 +412,35 @@ static const Map<String,dynamic> _fr = {
     "stack": "STACK",
     "platforms": "PLATEFORMES",
     "status": "STATUT",
+    "android": "ANDROID",
+    "android_text": "En test fermé sur Google Play.",
+    "join_beta": "Comment installer la bêta →",
     "back": "← Retour aux projets",
     "all_work": "← Tous les projets",
     "next": "Suivant : {} →",
-    "not_found": "Cette étude de cas n'existe pas.",
+    "not_found": "Ce projet n'existe pas.",
     "screenshot": "Capture {} sur {}",
     "close": "Fermer",
     "previous_shot": "Capture précédente",
     "next_shot": "Capture suivante"
+  },
+  "beta": {
+    "label": "BÊTA ANDROID · {}",
+    "title": "Installer {} sur Android",
+    "intro": "{} est en test fermé sur Google Play. Il faut trois étapes et environ deux minutes. Gardez cette page ouverte : chaque étape s'ouvre dans un nouvel onglet.",
+    "account": "Utilisez à chaque étape le compte Google de votre Play Store Android. Avec un autre compte, l'application n'apparaîtra pas.",
+    "step": "ÉTAPE {}",
+    "s1_title": "Rejoindre le groupe de testeurs",
+    "s1_body": "Connectez-vous à Google, puis cliquez sur « Rejoindre le groupe ». Ensuite, la page du groupe n'affiche rien d'autre. C'est normal : revenez ici pour l'étape 2.",
+    "s1_button": "Ouvrir le groupe de testeurs ↗",
+    "s2_title": "Devenir testeur",
+    "s2_body": "Cliquez sur « Devenir testeur ». Si Google Play indique que l'application n'est pas disponible, attendez une minute après avoir rejoint le groupe et rechargez la page.",
+    "s2_button": "Ouvrir la page de test ↗",
+    "s3_title": "Installer l'application",
+    "s3_body": "Installez {} depuis Google Play. Sur un ordinateur, choisissez votre téléphone et Play l'y installe.",
+    "s3_button": "Ouvrir dans Google Play ↗",
+    "no_android": "Pas de téléphone Android ? Utilisez l'application web ↗",
+    "back": "← Retour à {}"
   },
   "projects": {
     "kahvent": {
@@ -407,7 +451,7 @@ static const Map<String,dynamic> _fr = {
       "role": "Seul : produit, design, full-stack",
       "platforms": "Android et web avec une seule base de code Flutter",
       "security": "Sécurité au niveau des lignes sur chaque table, jetons de lien hachés",
-      "status": "En ligne, en développement ↗",
+      "status": "En ligne sur le web ↗",
       "problem": {
         "first": "À Lubumbashi, les organisateurs de mariage impriment encore des cartes d'invitation. Les cartes se perdent, les invités en transfèrent des photos, et l'équipe à l'entrée ne peut pas savoir qui est vraiment invité ni combien de places une famille a reçues.",
         "second": "Je voulais une seule chose qu'un organisateur puisse envoyer par WhatsApp et qui fonctionne aussi à l'entrée."

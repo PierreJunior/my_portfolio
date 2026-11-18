@@ -1,5 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:my_portfolio/lang/locale_keys.g.dart';
 import 'package:my_portfolio/models/data.dart';
 import 'package:my_portfolio/sections/header_section.dart';
@@ -180,6 +180,21 @@ class _CaseHeader extends StatelessWidget {
                 ),
               ),
       ),
+      if (project.hasBeta)
+        (
+          LocaleKeys.study_android.tr(),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _factValue(LocaleKeys.study_android_text.tr()),
+              AppTextLink(
+                label: LocaleKeys.study_join_beta.tr(),
+                uri: Uri.parse(project.betaRoute),
+                color: AppColors.accentSoft,
+              ),
+            ],
+          ),
+        ),
     ];
 
     return PageWidth(

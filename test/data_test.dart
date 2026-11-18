@@ -71,7 +71,7 @@ void main() {
     }
   });
 
-  test('next case study follows list order and stops at the end', () {
+  test('next project follows list order and stops at the end', () {
     expect(nextProject('kahvent')?.slug, 'tahadhari');
     expect(nextProject('rosary')?.slug, 'clima');
     expect(nextProject(projects.last.slug), isNull);

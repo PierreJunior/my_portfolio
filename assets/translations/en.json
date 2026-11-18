@@ -12,7 +12,7 @@
     "eyebrow": "FULL-STACK DEVELOPER · LUBUMBASHI, DRC · REMOTE / HYBRID",
     "title": "I build enterprise web apps and the mobile apps people carry.",
     "subtitle": "C# and Blazor Server for the back office. Flutter for the phone. Clean Architecture, fast data access and release pipelines that take minutes, not hours.",
-    "cta_work": "See the case studies",
+    "cta_work": "See my projects",
     "cta_cv": "Download CV (PDF)",
     "status_label": "OPEN TO WORK",
     "status_text": "Building Kahvent, a wedding invitation app on Flutter and Supabase.",
@@ -27,9 +27,10 @@
   },
   "work": {
     "label": "01 / SELECTED WORK",
-    "title": "Case studies",
-    "read": "Read case study →",
+    "title": "Projects",
+    "read": "Read more →",
     "open_live": "Open live app ↗",
+    "join_beta": "Get the Android beta →",
     "also": "Also:",
     "also_rest": ", a weather app from my Flutter learning path (2022).",
     "role": "Role",
@@ -38,7 +39,7 @@
     "security": "Security"
   },
   "status": {
-    "live": "● LIVE · IN DEVELOPMENT",
+    "live": "● LIVE · ANDROID IN CLOSED TESTING",
     "own": "OWN PRODUCT",
     "retired": "DELIVERED FOR {} · RETIRED",
     "learning": "LEARNING PROJECT"
@@ -93,7 +94,7 @@
     "built_with": "Built with Flutter"
   },
   "study": {
-    "label": "CASE STUDY",
+    "label": "PROJECT",
     "problem": "The problem",
     "built": "What I built",
     "architecture": "Architecture",
@@ -106,14 +107,35 @@
     "stack": "STACK",
     "platforms": "PLATFORMS",
     "status": "STATUS",
+    "android": "ANDROID",
+    "android_text": "In closed testing on Google Play.",
+    "join_beta": "How to install the beta →",
     "back": "← Back to all work",
     "all_work": "← All work",
     "next": "Next: {} →",
-    "not_found": "This case study doesn't exist.",
+    "not_found": "This project doesn't exist.",
     "screenshot": "Screenshot {} of {}",
     "close": "Close",
     "previous_shot": "Previous screenshot",
     "next_shot": "Next screenshot"
+  },
+  "beta": {
+    "label": "ANDROID BETA · {}",
+    "title": "Install {} on Android",
+    "intro": "{} is in closed testing on Google Play. Joining takes three steps and about two minutes. Keep this page open: each step opens in a new tab.",
+    "account": "Use the Google account that's on your Android phone's Play Store for every step. With a different account, the app won't show up.",
+    "step": "STEP {}",
+    "s1_title": "Join the testers group",
+    "s1_body": "Sign in to Google, then click \"Join group\". After joining, the group page shows nothing else. That's normal: come back here for step 2.",
+    "s1_button": "Open the testers group ↗",
+    "s2_title": "Become a tester",
+    "s2_body": "Click \"Become a tester\". If Google Play says the app isn't available, wait a minute after joining the group and reload the page.",
+    "s2_button": "Open the testing page ↗",
+    "s3_title": "Install the app",
+    "s3_body": "Install {} from Google Play. On a computer, pick your phone and Play installs it there.",
+    "s3_button": "Open in Google Play ↗",
+    "no_android": "No Android phone? Use the web app ↗",
+    "back": "← Back to {}"
   },
   "projects": {
     "kahvent": {
@@ -124,7 +146,7 @@
       "role": "Solo: product, design, full stack",
       "platforms": "Android and web from one Flutter codebase",
       "security": "Row-level security on every table, hashed link tokens",
-      "status": "Live, in development ↗",
+      "status": "Live on the web ↗",
       "problem": {
         "first": "Wedding hosts in Lubumbashi still print invitation cards. Cards get lost, guests forward photos of them, and the door team has no way to know who is really invited or how many seats a family was given.",
         "second": "I wanted one thing a host can send by WhatsApp that also works at the door."

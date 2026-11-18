@@ -12,7 +12,7 @@
     "eyebrow": "DÉVELOPPEUR FULL-STACK · LUBUMBASHI, RDC · À DISTANCE / HYBRIDE",
     "title": "Je crée des applications web d'entreprise et les applications mobiles qu'on garde en poche.",
     "subtitle": "C# et Blazor Server pour le back-office. Flutter pour le téléphone. Clean Architecture, accès aux données rapide et pipelines de publication qui prennent des minutes, pas des heures.",
-    "cta_work": "Voir les études de cas",
+    "cta_work": "Voir mes projets",
     "cta_cv": "Télécharger le CV (PDF)",
     "status_label": "DISPONIBLE",
     "status_text": "Je développe Kahvent, une application d'invitations de mariage en Flutter et Supabase.",
@@ -27,9 +27,10 @@
   },
   "work": {
     "label": "01 / PROJETS CHOISIS",
-    "title": "Études de cas",
-    "read": "Lire l'étude de cas →",
+    "title": "Projets",
+    "read": "En savoir plus →",
     "open_live": "Ouvrir l'application ↗",
+    "join_beta": "Obtenir la bêta Android →",
     "also": "Aussi :",
     "also_rest": ", une application météo de mon apprentissage Flutter (2022).",
     "role": "Rôle",
@@ -38,7 +39,7 @@
     "security": "Sécurité"
   },
   "status": {
-    "live": "● EN LIGNE · EN DÉVELOPPEMENT",
+    "live": "● EN LIGNE · ANDROID EN TEST FERMÉ",
     "own": "PROJET PERSONNEL",
     "retired": "LIVRÉ POUR {} · RETIRÉ",
     "learning": "PROJET D'APPRENTISSAGE"
@@ -93,7 +94,7 @@
     "built_with": "Construit avec Flutter"
   },
   "study": {
-    "label": "ÉTUDE DE CAS",
+    "label": "PROJET",
     "problem": "Le problème",
     "built": "Ce que j'ai construit",
     "architecture": "Architecture",
@@ -106,14 +107,35 @@
     "stack": "STACK",
     "platforms": "PLATEFORMES",
     "status": "STATUT",
+    "android": "ANDROID",
+    "android_text": "En test fermé sur Google Play.",
+    "join_beta": "Comment installer la bêta →",
     "back": "← Retour aux projets",
     "all_work": "← Tous les projets",
     "next": "Suivant : {} →",
-    "not_found": "Cette étude de cas n'existe pas.",
+    "not_found": "Ce projet n'existe pas.",
     "screenshot": "Capture {} sur {}",
     "close": "Fermer",
     "previous_shot": "Capture précédente",
     "next_shot": "Capture suivante"
+  },
+  "beta": {
+    "label": "BÊTA ANDROID · {}",
+    "title": "Installer {} sur Android",
+    "intro": "{} est en test fermé sur Google Play. Il faut trois étapes et environ deux minutes. Gardez cette page ouverte : chaque étape s'ouvre dans un nouvel onglet.",
+    "account": "Utilisez à chaque étape le compte Google de votre Play Store Android. Avec un autre compte, l'application n'apparaîtra pas.",
+    "step": "ÉTAPE {}",
+    "s1_title": "Rejoindre le groupe de testeurs",
+    "s1_body": "Connectez-vous à Google, puis cliquez sur « Rejoindre le groupe ». Ensuite, la page du groupe n'affiche rien d'autre. C'est normal : revenez ici pour l'étape 2.",
+    "s1_button": "Ouvrir le groupe de testeurs ↗",
+    "s2_title": "Devenir testeur",
+    "s2_body": "Cliquez sur « Devenir testeur ». Si Google Play indique que l'application n'est pas disponible, attendez une minute après avoir rejoint le groupe et rechargez la page.",
+    "s2_button": "Ouvrir la page de test ↗",
+    "s3_title": "Installer l'application",
+    "s3_body": "Installez {} depuis Google Play. Sur un ordinateur, choisissez votre téléphone et Play l'y installe.",
+    "s3_button": "Ouvrir dans Google Play ↗",
+    "no_android": "Pas de téléphone Android ? Utilisez l'application web ↗",
+    "back": "← Retour à {}"
   },
   "projects": {
     "kahvent": {
@@ -124,7 +146,7 @@
       "role": "Seul : produit, design, full-stack",
       "platforms": "Android et web avec une seule base de code Flutter",
       "security": "Sécurité au niveau des lignes sur chaque table, jetons de lien hachés",
-      "status": "En ligne, en développement ↗",
+      "status": "En ligne sur le web ↗",
       "problem": {
         "first": "À Lubumbashi, les organisateurs de mariage impriment encore des cartes d'invitation. Les cartes se perdent, les invités en transfèrent des photos, et l'équipe à l'entrée ne peut pas savoir qui est vraiment invité ni combien de places une famille a reçues.",
         "second": "Je voulais une seule chose qu'un organisateur puisse envoyer par WhatsApp et qui fonctionne aussi à l'entrée."
